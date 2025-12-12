@@ -1,0 +1,11 @@
+{
+    "navigation": {
+        "home": "Home",
+        "articles": "Articles",
+        "contact": "Contact",
+        "language": "Language"
+    },
+    "HomePage": {
+        "title": "Hello world!!"
+    }
+}

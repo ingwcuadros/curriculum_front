@@ -1,0 +1,11 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "articles": "Articulos",
+        "contact": "Contacto",
+        "language": "Idioma"
+    },
+    "HomePage": {
+        "title": "Hola mundo!!"
+    }
+}
