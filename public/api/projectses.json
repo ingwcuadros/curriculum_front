@@ -1,0 +1,32 @@
+{
+    "id": "37c2d8da-10d4-4d42-952c-e7b2a7efd8c0",
+    "experienceId": "f9749f25-6d85-4af2-a707-27ea5195d1bc",
+    "title": "Proyectos destacados en desarrollo web",
+    "content": "Aquí encontrarás una selección de mis proyectos más relevantes, donde aplico las mejores prácticas y tecnologías modernas.",
+    "articles": [
+        {
+            "id": "e81f9793-9141-430b-a51d-da32de697a85",
+            "title": "Arquitectura Backend escalable",
+            "url": "arquitectura-backend-escalable",
+            "content": "Explora cómo diseñé una arquitectura robusta para soportar miles de peticiones concurrentes.",
+            "tags": [
+                "Backend",
+                "Arquitectura",
+                "Escalabilidad",
+                "Node.js"
+            ]
+        },
+        {
+            "id": "583f0c8a-3acd-4520-9cf6-4f4314796774",
+            "title": "Optimización de filtros dinámicos",
+            "url": "optimizacion-de-filtros-dinamicos",
+            "content": "Implementación eficiente de filtros para mejorar la experiencia del usuario en grandes datasets.",
+            "tags": [
+                "Frontend",
+                "React",
+                "UX",
+                "Performance"
+            ]
+        }
+    ]
+}

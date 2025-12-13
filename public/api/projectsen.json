@@ -1,0 +1,32 @@
+{
+    "id": "37c2d8da-10d4-4d42-952c-e7b2a7efd8c0",
+    "experienceId": "f9749f25-6d85-4af2-a707-27ea5195d1bc",
+    "title": "Featured Web Development Projects",
+    "content": "Discover a curated selection of my most impactful projects, showcasing best practices and modern technologies.",
+    "articles": [
+        {
+            "id": "e81f9793-9141-430b-a51d-da32de697a85",
+            "title": "Scalable Backend Architecture",
+            "url": "scalable-backend-architecture",
+            "content": "Learn how I designed a robust architecture to handle thousands of concurrent requests.",
+            "tags": [
+                "Backend",
+                "Architecture",
+                "Scalability",
+                "Node.js"
+            ]
+        },
+        {
+            "id": "583f0c8a-3acd-4520-9cf6-4f4314796774",
+            "title": "Dynamic Filters Optimization",
+            "url": "dynamic-filters-optimization",
+            "content": "Efficient implementation of filters to enhance user experience on large datasets.",
+            "tags": [
+                "Frontend",
+                "React",
+                "UX",
+                "Performance "
+            ]
+        }
+    ]
+}

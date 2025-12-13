@@ -7,5 +7,9 @@
     },
     "HomePage": {
         "title": "Hello world!!"
+    },
+    "Projects": {
+        "more": "Read more",
+        "viewAll": "View all projects"
     }
 }

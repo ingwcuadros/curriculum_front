@@ -1,6 +1,18 @@
 import { useTranslations } from 'next-intl';
+import Banner from '@/components/Banner';
+import Projects from '@/components/Projects';
+import Academic from '@/components/Academic';
 
 export default function HomePage() {
     const t = useTranslations('HomePage');
-    return <h1>{t('title')}</h1>;
+    return (
+
+        <main className="space-y-8">
+            <Banner />
+            <Projects />
+            <Academic />
+            {/* Aquí irán otras secciones */}
+        </main>
+
+    );
 }
