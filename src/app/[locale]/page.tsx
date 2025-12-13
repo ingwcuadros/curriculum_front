@@ -7,7 +7,7 @@ export default function HomePage() {
     const t = useTranslations('HomePage');
     return (
 
-        <main className="space-y-8">
+        <main className="space-y-8 bg-[#0B0F14]">
             <Banner />
             <Projects />
             <Academic />

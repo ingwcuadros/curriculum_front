@@ -17,7 +17,7 @@ export default async function Banner() {
     const { title, textBanner, image, altImage, tags } = await res.json();
 
     return (
-        <section className="bg-gray-100 py-10 px-6 text-center rounded-lg shadow-md">
+        <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
             <div className="max-w-3xl mx-auto">
                 {/* Imagen opcional */}
                 {image && (

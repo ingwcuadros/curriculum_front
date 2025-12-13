@@ -11,9 +11,9 @@ type Props = {
 export default async function RootLayout({ children }: Props) {
     return (
         <html>
-            <body>
+            <body className="min-h-screen font-sans bg-[#0B0F14]">
                 <NextIntlClientProvider>
-                    <Header />
+                    <Header nombre="Walter Cuadros" />
                     <main className="min-h-screen">{children}</main>
                     <Footer />
                 </NextIntlClientProvider>

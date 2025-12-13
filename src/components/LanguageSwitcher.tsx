@@ -1,27 +1,23 @@
 
 "use client";
+import Link from 'next/link';
 
-import { useRouter, usePathname } from "next/navigation";
 
-export default function LanguageSwitcher() {
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const changeLanguage = (lang: string) => {
-        // Reemplaza el primer segmento de la URL por el nuevo idioma
-        const segments = pathname.split("/");
-        segments[1] = lang;
-        router.push(segments.join("/"));
-    };
-
+export default function LanguageSwitcher({ locale }: { locale: string }) {
     return (
-        <select
-            onChange={(e) => changeLanguage(e.target.value)}
-            className="bg-gray-700 text-white p-2 rounded"
-            defaultValue={pathname.split("/")[1]}
-        >
-            <option value="es">ES</option>
-            <option value="en">EN</option>
-        </select>
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <div className="flex text-sm">
+                <Link href="/es" className={`px-1.5 ${locale === 'es' ? 'text-white font-medium' : 'text-gray-500 hover:text-gray-300'}`}>
+                    ES
+                </Link>
+                <span className="text-gray-600">|</span>
+                <Link href="/en" className={`px-1.5 ${locale === 'en' ? 'text-white font-medium' : 'text-gray-500 hover:text-gray-300'}`}>
+                    EN
+                </Link>
+            </div>
+        </div>
     );
 }
