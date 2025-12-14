@@ -3,7 +3,10 @@
         "home": "Home",
         "articles": "Articles",
         "contact": "Contact",
-        "language": "Language"
+        "language": "Language",
+        "pitch": "I help teams build scalable cloud solutions, focusing on product, architecture, and operations.",
+        "labelSocialMedia": "Connect with me",
+        "message": "Built with bits, bytes, and liters of coffee ☕"
     },
     "HomePage": {
         "title": "Hello world!!"
@@ -11,5 +14,12 @@
     "Projects": {
         "more": "Read more",
         "viewAll": "View all projects"
+    },
+    "Banner": {
+        "labelPrincipal": "Leading",
+        "labelSecundary": "Solutions",
+        "contactMe": "Contact Me",
+        "seeMyWork": "See My Work",
+        "openWork": "Open to collaborate on innovative projects"
     }
 }

@@ -1,15 +1,17 @@
 {
     "id": "ac560dfe-c64a-4051-beab-0ef490f74ebd",
     "bannerId": "77eb58fc-79d4-4f1c-8308-d24a8245311f",
-    "title": "¡Bienvenido a mi portafolio profesional!",
-    "textBanner": "Explora mis proyectos, experiencia y artículos sobre desarrollo web.",
+    "title": "Walter Giovanny Cuadros Rincon",
+    "role": "Cloud Solutions Architect · Delivery Manager · Product Owner Técnico",
+    "textBanner": "Ayudo a equipos a construir soluciones escalables en la nube, con foco en producto, arquitectura y operación.",
     "altImage": "Imagen representativa del banner",
-    "image": "https://fastly.picsum.photos/id/703/1440/781.jpg?hmac=PzpunGv-_MnaO9PS-BXAufBgxa2gHuOB4sPVuX16Fik",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face",
     "tags": [
-        "Desarrollo Web",
-        "Next.js",
-        "Tailwind CSS",
-        "React",
-        "Portafolio"
+        "Cloud",
+        "Architect",
+        "ProductOwner",
+        "DeliveryManager",
+        "AI",
+        "NestJS"
     ]
 }

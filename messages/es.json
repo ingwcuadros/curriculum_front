@@ -3,7 +3,10 @@
         "home": "Inicio",
         "articles": "Articulos",
         "contact": "Contacto",
-        "language": "Idioma"
+        "language": "Idioma",
+        "pitch": "Ayudo a equipos a construir soluciones escalables en la nube, con foco en producto, arquitectura y operación.",
+        "labelSocialMedia": "Conecta conmigo",
+        "message": "Construido con bits, bytes y litros de café ☕"
     },
     "HomePage": {
         "title": "Hola mundo!!"
@@ -11,5 +14,12 @@
     "Projects": {
         "more": "Leer más",
         "viewAll": "Ver todos los proyectos"
+    },
+    "Banner": {
+        "labelPrincipal": "Liderando",
+        "labelSecundary": "Soluciones",
+        "contactMe": "Contáctame",
+        "seeMyWork": "Ver mi trabajo",
+        "openWork": "Abierto a colaborar en proyectos innovadores"
     }
 }
