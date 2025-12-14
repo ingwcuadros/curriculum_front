@@ -1,32 +1,30 @@
 {
     "id": "37c2d8da-10d4-4d42-952c-e7b2a7efd8c0",
-    "experienceId": "f9749f25-6d85-4af2-a707-27ea5195d1bc",
+    "proyectId": "f9749f25-6d85-4af2-a707-27ea5195d1bc",
     "title": "Proyectos destacados en desarrollo web",
     "content": "Aquí encontrarás una selección de mis proyectos más relevantes, donde aplico las mejores prácticas y tecnologías modernas.",
     "articles": [
         {
             "id": "e81f9793-9141-430b-a51d-da32de697a85",
-            "title": "Arquitectura Backend escalable",
-            "url": "arquitectura-backend-escalable",
-            "content": "Explora cómo diseñé una arquitectura robusta para soportar miles de peticiones concurrentes.",
-            "tags": [
-                "Backend",
-                "Arquitectura",
-                "Escalabilidad",
-                "Node.js"
-            ]
+            "title": "Platform Engineering Hub",
+            "url": "platform-engineering-hub",
+            "auxiliaryContent": "Plataforma interna de autoservicio para equipos de desarrollo con provisioning automático de infraestructura cloud.",
+            "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=450&fit=crop",
+            "altImage": "Imagen representativa del proyecto Platform Engineering Hub"
         },
         {
-            "id": "583f0c8a-3acd-4520-9cf6-4f4314796774",
-            "title": "Optimización de filtros dinámicos",
-            "url": "optimizacion-de-filtros-dinamicos",
-            "content": "Implementación eficiente de filtros para mejorar la experiencia del usuario en grandes datasets.",
-            "tags": [
-                "Frontend",
-                "React",
-                "UX",
-                "Performance"
-            ]
+            "id": "b1f4c8e2-3c5e-4f6a-9f7e-2d5b6c8e9f0a",
+            "title": "Real-time Analytics Pipeline",
+            "auxiliaryContent": "Sistema de procesamiento de datos en tiempo real con BigQuery, Pub/Sub y dashboards interactivos.",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+            "altImage": "Imagen representativa del proyecto Real-time Analytics Pipeline"
+        },
+        {
+            "id": "a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890",
+            "title": "AI-Powered Search Engine",
+            "auxiliaryContent": "Motor de búsqueda semántica con embeddings vectoriales, Pinecone y modelos de lenguaje.",
+            "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
+            "altImage": "Imagen representativa del proyecto AI-Powered Search Engine"
         }
     ]
 }

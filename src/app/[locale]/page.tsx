@@ -1,6 +1,6 @@
 
-import Banner from '@/components/Banner';
-import Projects from '@/components/Projects';
+import Banner from '@/components/Home/Banner';
+import Projects from '@/components/Home/Projects/Projects';
 import Academic from '@/components/Academic';
 import { getLocale } from 'next-intl/server';
 
@@ -20,8 +20,9 @@ export default async function HomePage() {
     ]);
 
     return (
-        <main className="space-y-8 bg-[#0B0F14]">
+        <main className="bg-[#0B0F14]">
             <Banner data={bannerData} />
+            <Projects data={projectsData} />
 
             {/* Aquí irán otras secciones */}
         </main>
