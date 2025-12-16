@@ -20,7 +20,9 @@
         "labelSecundary": "Soluciones",
         "contactMe": "Contáctame",
         "seeMyWork": "Ver mi trabajo",
-        "openWork": "Abierto a colaborar en proyectos innovadores"
+        "openWork": "Abierto a colaborar en proyectos innovadores",
+        "ariaCtaContact": "Ir a página de contacto",
+        "ariaCtaProject": "Ir a página de proyectos"
     },
     "cv": {
         "title": "Descarga mi CV en PDF",

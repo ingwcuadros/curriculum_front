@@ -42,21 +42,16 @@ export default function Header({ nombre }: Props) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 md:h-20 ">
                     {/* Logo */}
-                    <motion.button
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="text-2xl font-bold text-white tracking-tight focus:outline-none rounded-lg px-2 py-1"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
+                    <Link href="/" aria-label={`Go to Walter Cuadros homepage`} className="text-2xl font-bold text-white tracking-tight focus:outline-none rounded-lg px-2 py-1" >
                         <span className="text-[#4C9EEB]">{'{'}</span>
                         <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                             {nombre.split(' ')[0]}
                         </span>
                         <span className="text-[#7C4DFF]">{'}'}</span>
-                    </motion.button>
+                    </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-1" role="navigation">
+                    <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
                         {navItems.map((item) => (
                             <NavItem key={item.id} item={item} isActive={normalizedPath === item.href} />
                         ))}
@@ -69,6 +64,9 @@ export default function Header({ nombre }: Props) {
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors focus:outline-none rounded-lg"
                             aria-label="Toggle menu"
+                            aria-expanded={isMobileMenuOpen}
+                            aria-controls="mobile-menu"
+
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 {isMobileMenuOpen ? (
@@ -100,15 +98,20 @@ export default function Header({ nombre }: Props) {
                                     className={`block w-full text-left px-4 py-3 rounded-xl transition-all duration-200 ${isActive
                                         ? 'bg-[#4C9EEB]/10 text-[#4C9EEB]'
                                         : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                        }`}
+                                        } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2`}
+
+                                    aria-expanded={isMobileMenuOpen}
+                                    aria-controls="mobile-menu"
+
                                 >
-                                    {item.href}
+                                    {item.label}
                                 </Link>
                             ))}
                         </nav>
                     </motion.div>
                 )}
             </AnimatePresence>
+            <a href="#main-content" className="sr-only focus:not-sr"> </a>
         </header>
     );
 }
