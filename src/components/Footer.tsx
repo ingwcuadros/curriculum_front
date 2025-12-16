@@ -46,7 +46,7 @@ export default function Footer() {
             < div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14] to-[#12151B]" />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-7xl lg:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Main content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
                     {/* Brand column */}

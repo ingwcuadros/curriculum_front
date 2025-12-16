@@ -21,5 +21,12 @@
         "contactMe": "Contact Me",
         "seeMyWork": "See My Work",
         "openWork": "Open to collaborate on innovative projects"
+    },
+    "cv": {
+        "title": "Download my CV in PDF",
+        "subtitle": "Learn more about my professional journey",
+        "text": "Updated document",
+        "button": "Download CV",
+        "size": "420 KB"
     }
 }

@@ -21,5 +21,12 @@
         "contactMe": "Contáctame",
         "seeMyWork": "Ver mi trabajo",
         "openWork": "Abierto a colaborar en proyectos innovadores"
+    },
+    "cv": {
+        "title": "Descarga mi CV en PDF",
+        "subtitle": "Conoce más sobre mi trayectoria profesional",
+        "text": "Documento actualizado",
+        "button": "Descargar CV",
+        "size": "420 KB"
     }
 }

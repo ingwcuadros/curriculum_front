@@ -1,8 +1,6 @@
 {
     "id": "bc5ae985-a0e1-4140-bceb-9a2ec88b8e47",
     "academicAchievementId": "56609122-ab4d-4fb4-8138-9921294ded4d",
-    "title": "Logros Académicos Destacados",
-    "content": "### Principales logros:\n- Graduado en Ingeniería de Sistemas con honores.\n- Certificación en **Desarrollo Web Avanzado**.\n- Participación en proyectos de investigación sobre **IA y Big Data**.",
-    "altImage": "Imagen representativa de logros académicos",
-    "image": "https://fastly.picsum.photos/id/464/800/700.jpg?hmac=WDG-8e9Z4yW6Y7oRWy76sUjnEo5TVk_m__4YngyRbPM"
+    "title": "Logros Académicos",
+    "content": "## Certificaciones\n- Google Cloud Architect (2023)\n- Scrum Product Owner Certified (2022)\n- AWS Cloud Practitioner (2021)\n\n## Formación\n- Ingeniería de Sistemas — Universidad Nacional (2017)\n- Cursos avanzados: Arquitectura en la nube, Observabilidad, Diseño de producto\n\n## Publicaciones / Charlas\n-Charla: 'Optimización de imágenes en GCP' (2025)\n- Artículo: 'Estrategias de vector DB y embeddings con Pinecone'"
 }
