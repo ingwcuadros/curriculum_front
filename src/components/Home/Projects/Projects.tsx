@@ -7,37 +7,9 @@ import ProjectCard from '@/components/Home/Projects/ProjectCard';
 
 
 export default function Projects({ data }: { data?: any }) {
-    const datad = {
-        proyectos: [
-            {
-                titulo: "Platform Engineering Hub",
-                descripcion: "Plataforma interna de autoservicio para equipos de desarrollo con provisioning automático de infraestructura cloud.",
-                imagen: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=450&fit=crop"
-            },
-            {
-                titulo: "Real-time Analytics Pipeline",
-                descripcion: "Sistema de procesamiento de datos en tiempo real con BigQuery, Pub/Sub y dashboards interactivos.",
-                imagen: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
-            },
-            {
-                titulo: "AI-Powered Search Engine",
-                descripcion: "Motor de búsqueda semántica con embeddings vectoriales, Pinecone y modelos de lenguaje.",
-                imagen: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop"
-            }
-        ],
-        año_actual: "2025"
-    };
-
-    const t = {
-        projects: {
-            title: "Proyectos Destacados",
-            readMore: "Leer más",
-            viewAll: "Ver grilla completa de proyectos"
-        }
-    }
     const tranlation = useTranslations('Projects');
     return (
-        <section className="relative py-24 lg:py-32 overflow-hidden">
+        <section aria-labelledby="projects-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F14] via-[#12151B] to-[#0B0F14]" />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#4C9EEB]/5 rounded-full blur-[120px]" />
@@ -55,7 +27,7 @@ export default function Projects({ data }: { data?: any }) {
                         <Grid3X3 className="w-4 h-4" />
                         Portfolio
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    <h2 id="projects-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                         {data.title}
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
@@ -66,7 +38,7 @@ export default function Projects({ data }: { data?: any }) {
                 {/* Projects grid */}
 
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div role="list" className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
                     {data.articles.map((item: any) => (
                         <ProjectCard
@@ -87,14 +59,16 @@ export default function Projects({ data }: { data?: any }) {
                     transition={{ delay: 0.4 }}
                     className="flex justify-center mt-12"
                 >
-                    <motion.button
+                    <motion.a
+                        href={'/articles'}
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
+                        aria-label={tranlation('viewAll')}
                         className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-medium hover:bg-white/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#4C9EEB] focus:ring-offset-2 focus:ring-offset-[#0B0F14]"
                     >
                         <Grid3X3 className="w-4 h-4" />
                         {tranlation('viewAll')}
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </div>
         </section>

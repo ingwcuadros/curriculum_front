@@ -6,7 +6,8 @@
         "language": "Language",
         "pitch": "I help teams build scalable cloud solutions, focusing on product, architecture, and operations.",
         "labelSocialMedia": "Connect with me",
-        "message": "Built with bits, bytes, and liters of coffee ☕"
+        "message": "Built with bits, bytes, and liters of coffee ☕",
+        "autorlabel": "Author's name"
     },
     "HomePage": {
         "title": "Hello world!!"
@@ -29,6 +30,7 @@
         "subtitle": "Learn more about my professional journey",
         "text": "Updated document",
         "button": "Download CV",
-        "size": "420 KB"
+        "size": "420 KB",
+        "ariaLabel": "Download CV in PDF format"
     }
 }

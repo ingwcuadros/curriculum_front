@@ -5,7 +5,7 @@ import { Briefcase, Layers, Cloud, Code } from 'lucide-react';
 
 
 
-export default function ExperienceCard({ experience, index, isLeft, prefersReducedMotion }: { experience: any, index: number, isLeft: any, prefersReducedMotion: any }) {
+export default function TimelineItem({ experience, index, isLeft, prefersReducedMotion }: { experience: any, index: number, isLeft: any, prefersReducedMotion: any }) {
 
     const Icon = Briefcase;
     const accentColors = [
@@ -22,6 +22,8 @@ export default function ExperienceCard({ experience, index, isLeft, prefersReduc
         <div className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
             {/* Card */}
             <motion.article
+                role="listitem"
+                aria-label={`Experiencia: ${experience.title}`}
                 initial={{
                     opacity: 0,
                     x: prefersReducedMotion ? 0 : (isLeft ? -30 : 30),

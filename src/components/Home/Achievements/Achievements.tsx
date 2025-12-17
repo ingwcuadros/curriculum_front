@@ -9,7 +9,7 @@ import AchievementIllustration from './AchievementIllustration';
 
 export default function Achievements({ data }: { data?: any }) {
     return (
-        <section className="relative py-24 lg:py-32 overflow-hidden">
+        <section aria-labelledby="achievements-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#12151B] via-[#0B0F14] to-[#12151B]" />
             <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#7C4DFF]/5 rounded-full blur-[150px]" />
@@ -27,7 +27,7 @@ export default function Achievements({ data }: { data?: any }) {
                         <Award className="w-4 h-4" />
                         Achievements
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    <h2 id="achievements-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                         {data?.title}
                     </h2>
                 </motion.div>
@@ -96,7 +96,7 @@ export default function Achievements({ data }: { data?: any }) {
                         className="order-1 lg:order-2 flex justify-center"
                     >
                         <div className="relative w-full max-w-md">
-                            <AchievementIllustration />
+                            <AchievementIllustration aria-hidden="true" />
                         </div>
                     </motion.div>
                 </div>

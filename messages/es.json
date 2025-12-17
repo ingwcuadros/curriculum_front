@@ -6,7 +6,8 @@
         "language": "Idioma",
         "pitch": "Ayudo a equipos a construir soluciones escalables en la nube, con foco en producto, arquitectura y operación.",
         "labelSocialMedia": "Conecta conmigo",
-        "message": "Construido con bits, bytes y litros de café ☕"
+        "message": "Construido con bits, bytes y litros de café ☕",
+        "autorlabel": "Nombre del autor"
     },
     "HomePage": {
         "title": "Hola mundo!!"
@@ -29,6 +30,7 @@
         "subtitle": "Conoce más sobre mi trayectoria profesional",
         "text": "Documento actualizado",
         "button": "Descargar CV",
-        "size": "420 KB"
+        "size": "420 KB",
+        "ariaLabel": "Descargar CV en formato PDF"
     }
 }

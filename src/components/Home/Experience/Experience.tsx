@@ -21,7 +21,7 @@ export default function Experience({ data }: any) {
     }, []);
 
     return (
-        <section className="relative py-24 lg:py-32 overflow-hidden">
+        <section aria-labelledby="career-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#12151B] via-[#0B0F14] to-[#12151B]" />
             <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#22D3EE]/5 rounded-full blur-[150px]" />
@@ -39,7 +39,7 @@ export default function Experience({ data }: any) {
                         <Briefcase className="w-4 h-4" />
                         Career
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    <h2 id="career-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                         {data.title}
                     </h2>
                 </motion.div>
@@ -53,7 +53,7 @@ export default function Experience({ data }: any) {
                     <div className="lg:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#4C9EEB]/20 via-[#4C9EEB]/40 to-[#4C9EEB]/20" />
 
                     {/* Timeline items */}
-                    <div className="space-y-12 lg:space-y-20">
+                    <div role="list" className="space-y-12 lg:space-y-20">
                         {data.articles.map((exp: any, index: any) => (
                             <TimelineItem
                                 key={index}

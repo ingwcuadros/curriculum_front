@@ -9,7 +9,7 @@ import CVIllustration from './CVIlustration';
 export default function CVDownload({ data }: any) {
     const t = useTranslations('cv');
     return (
-        <section className="relative py-24 lg:py-32 overflow-hidden">
+        <section aria-labelledby="cv-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F14] to-[#12151B]" />
 
@@ -51,7 +51,7 @@ export default function CVDownload({ data }: any) {
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#4C9EEB] to-[#7C4DFF] rounded-2xl blur-xl opacity-50" />
                                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-[#4C9EEB] to-[#7C4DFF] flex items-center justify-center">
-                                        <FileText className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
+                                        <FileText className="w-12 h-12 sm:w-16 sm:h-16 text-white" aria-hidden="true" />
                                     </div>
                                     {/* PDF badge */}
                                     <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-lg bg-[#0B0F14] border border-white/20 text-white text-xs font-bold">
@@ -70,7 +70,7 @@ export default function CVDownload({ data }: any) {
                                         <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
                                             <span className="text-[#22D3EE] text-sm font-medium">{t('text')}</span>
                                         </div>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
+                                        <h2 id="cv-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
                                             {t('title')}
                                         </h2>
                                         <p className="text-gray-400 text-lg mb-6">
@@ -91,6 +91,7 @@ export default function CVDownload({ data }: any) {
                                             download
                                             whileHover={{ scale: 1.02, y: -2 }}
                                             whileTap={{ scale: 0.98 }}
+                                            aria-label={t('ariaLabel')}
                                             className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#4C9EEB] to-[#7C4DFF] text-white font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#4C9EEB]/25 focus:outline-none focus:ring-2 focus:ring-[#4C9EEB] focus:ring-offset-2 focus:ring-offset-[#12151B]"
                                         >
                                             <span className="relative z-10 flex items-center gap-3">

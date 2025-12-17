@@ -41,7 +41,7 @@ export default function Footer() {
 
 
     return (
-        <footer className="relative py-16 lg:py-24 overflow-hidden" >
+        <footer role="contentinfo" aria-labelledby="footer-title" className="relative py-16 lg:py-24 overflow-hidden" >
             {/* Background */}
             < div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14] to-[#12151B]" />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -55,7 +55,7 @@ export default function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <div className="text-2xl font-bold text-white mb-4">
+                        <div className="text-2xl font-bold text-white mb-4" role={t('autorlabel')}>
                             <span className="text-[#4C9EEB]">{"{"}</span>
                             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                                 Walter Giovanny Cuadros Rincón
@@ -92,7 +92,7 @@ export default function Footer() {
                         transition={{ delay: 0.1 }}
                     >
                         <h3 className="text-white font-semibold mb-6">{t("labelSocialMedia")}</h3>
-                        <div className="flex flex-wrap gap-3">
+                        <div role="list" className=" flex flex-wrap gap-3">
                             {Object.entries(data.links_redes).map(([name, url], index) => {
                                 const Icon = socialIcons[name as keyof typeof socialIcons] || Globe;
                                 return (
@@ -106,7 +106,7 @@ export default function Footer() {
                                         className="group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#4C9EEB]/50 hover:bg-[#4C9EEB]/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#4C9EEB] focus:ring-offset-2 focus:ring-offset-[#0B0F14]"
                                         aria-label={`Visit ${name}`}
                                     >
-                                        <Icon className="w-4 h-4 text-gray-400 group-hover:text-[#4C9EEB] transition-colors" />
+                                        <Icon aria-hidden="true" className="w-4 h-4 text-gray-400 group-hover:text-[#4C9EEB] transition-colors" />
                                         <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{name}</span>
                                     </motion.a>
                                 );
@@ -135,10 +135,10 @@ export default function Footer() {
                         </div>
                     </div>
                 </motion.div>
-            </div>
+            </div >
 
             {/* Decorative gradient at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4C9EEB]/30 to-transparent" />
+            < div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4C9EEB]/30 to-transparent" />
         </footer >
     );
 }

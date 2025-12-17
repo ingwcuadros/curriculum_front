@@ -5,7 +5,10 @@ import { motion } from 'framer-motion';
 
 export default function CVIllustration() {
     return (
-        <svg width="200" height="200" viewBox="0 0 200 200" className="w-full h-auto" >
+        <svg role="img" aria-label="Ilustración decorativa de documentos" width="200" height="200" viewBox="0 0 200 200" className="w-full h-auto"
+            aria-hidden="true"
+            focusable="false"
+        >
             <defs>
                 <linearGradient id="cvGrad1" x1="0%" y1="0%" x2="100%" y2="100%" >
                     <stop offset="0%" stopColor="#4C9EEB" stopOpacity="0.3" />

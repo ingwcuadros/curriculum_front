@@ -21,7 +21,7 @@ export default function ProjectCard({ project, index, t }: { project: any, index
             onMouseLeave={() => setIsHovered(false)}
             className="group relative"
         >
-            <div className="relative rounded-2xl overflow-hidden bg-[#12151B] border border-white/5 hover:border-white/10 transition-all duration-500">
+            <div role="listitem" className="relative rounded-2xl overflow-hidden bg-[#12151B] border border-white/5 hover:border-white/10 transition-all duration-500">
                 {/* Glassmorphism effect on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-[#4C9EEB]/5 to-[#7C4DFF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -35,6 +35,7 @@ export default function ProjectCard({ project, index, t }: { project: any, index
                         alt={project.altImage || 'Project image'}
                         width={800}
                         height={450}
+                        priority={index === 0}
                         className={`w-full h-full object-cover transition-all duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'
                             } ${isHovered ? 'scale-110' : 'scale-100'}`}
                         onLoad={() => setImageLoaded(true)}
@@ -52,13 +53,15 @@ export default function ProjectCard({ project, index, t }: { project: any, index
                         {project.auxiliaryContent}
                     </p>
 
-                    <motion.button
+                    <motion.a
+                        href={`/articles/${project.url}`}
                         whileHover={{ x: 5 }}
+                        aria-label={`${t('more')} ${project.title}`}
                         className="flex items-center gap-2 text-[#4C9EEB] font-medium text-sm hover:text-[#22D3EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#4C9EEB] rounded"
                     >
                         {t('more')}
                         <ArrowUpRight className="w-4 h-4" />
-                    </motion.button>
+                    </motion.a>
                 </div>
 
                 {/* Corner accent */}
@@ -72,6 +75,6 @@ export default function ProjectCard({ project, index, t }: { project: any, index
                     </motion.div>
                 </div>
             </div>
-        </motion.article>
+        </motion.article >
     );
 }
