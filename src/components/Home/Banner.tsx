@@ -3,23 +3,22 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import Link from 'next/link';
+import { BannerData } from "@/schemas/banner.schema";
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
-export const revalidate = 3600; // ISR: revalidar cada hora
 
-export default function Banner({ data }: any) {
+interface BannerProps {
+    data: BannerData;
+}
+
+export default function Banner({ data }: BannerProps) {
 
 
     const traslation = useTranslations('Banner');
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
-    const scrollToSection = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-12" aria-labelledby="banner-title">
             {/* Background gradient */}

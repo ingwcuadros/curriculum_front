@@ -1,12 +1,18 @@
 
 'use client'
 import React, { useState, useEffect } from 'react';
+import { ExperienceData, ExperienceArticleData } from "@/schemas/experience.schema";
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import TimelineItem from './TimelineItem';
 
 
-export default function Experience({ data }: any) {
+interface ExperienceProps {
+    data: ExperienceData;
+}
+
+
+export default function Experience({ data }: ExperienceProps) {
 
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -54,7 +60,7 @@ export default function Experience({ data }: any) {
 
                     {/* Timeline items */}
                     <div role="list" className="space-y-12 lg:space-y-20">
-                        {data.articles.map((exp: any, index: any) => (
+                        {data.articles.map((exp: ExperienceArticleData, index: any) => (
                             <TimelineItem
                                 key={index}
                                 experience={exp}

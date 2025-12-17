@@ -4,9 +4,16 @@ import { motion } from 'framer-motion';
 import { FileText, Download, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import CVIllustration from './CVIlustration';
+import { CVDownloadData } from "@/schemas/cvdownload.schema";
 
 
-export default function CVDownload({ data }: any) {
+
+interface CVDownloadProps {
+    data: CVDownloadData;
+}
+
+
+export default function CVDownload({ data }: CVDownloadProps) {
     const t = useTranslations('cv');
     return (
         <section aria-labelledby="cv-title" className="relative py-24 lg:py-32 overflow-hidden">

@@ -3,11 +3,19 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Grid3X3 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { ArticleData } from "@/schemas/projects.schema";
 
-export default function ProjectCard({ project, index, t }: { project: any, index: number, t: any }) {
+
+interface ProjectCardProps {
+    project: ArticleData;
+    index: number;
+    t?: any; // Lo tiparemos después
+}
+
+
+export default function ProjectCard({ project, index, t }: ProjectCardProps) {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 

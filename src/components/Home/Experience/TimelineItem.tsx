@@ -1,11 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { Briefcase, Layers, Cloud, Code } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
+import { ExperienceArticleData } from "@/schemas/experience.schema";
 
 
 
-export default function TimelineItem({ experience, index, isLeft, prefersReducedMotion }: { experience: any, index: number, isLeft: any, prefersReducedMotion: any }) {
+interface TimelineItemProps {
+    experience: ExperienceArticleData;
+    index: number;
+    isLeft: boolean;
+    prefersReducedMotion?: boolean;
+}
+
+
+export default function TimelineItem({ experience, index, isLeft, prefersReducedMotion }: TimelineItemProps) {
 
     const Icon = Briefcase;
     const accentColors = [

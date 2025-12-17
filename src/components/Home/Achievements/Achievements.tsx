@@ -1,13 +1,18 @@
 'use client';
 import { motion } from 'framer-motion';
+import { AchievementsData } from "@/schemas/achievements.schema";
 import ReactMarkdown from 'react-markdown';
 import { Award, GraduationCap, Mic } from 'lucide-react';
 import AchievementIllustration from './AchievementIllustration';
 
 
 
+interface AchievementsProps {
+    data: AchievementsData;
+}
 
-export default function Achievements({ data }: { data?: any }) {
+
+export default function Achievements({ data }: AchievementsProps) {
     return (
         <section aria-labelledby="achievements-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}

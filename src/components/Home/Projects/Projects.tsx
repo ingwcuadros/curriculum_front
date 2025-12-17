@@ -3,10 +3,16 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Grid3X3, ArrowRight } from 'lucide-react';
+import { ProjectsData, ArticleData } from "@/schemas/projects.schema";
 import ProjectCard from '@/components/Home/Projects/ProjectCard';
 
 
-export default function Projects({ data }: { data?: any }) {
+interface ProjectsProps {
+    data: ProjectsData;
+}
+
+
+export default function Projects({ data }: ProjectsProps) {
     const tranlation = useTranslations('Projects');
     return (
         <section aria-labelledby="projects-title" className="relative py-24 lg:py-32 overflow-hidden">
@@ -30,9 +36,6 @@ export default function Projects({ data }: { data?: any }) {
                     <h2 id="projects-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                         {data.title}
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
-                        {data.auxiliaryContent}
-                    </p>
                 </motion.div>
 
                 {/* Projects grid */}
@@ -40,7 +43,7 @@ export default function Projects({ data }: { data?: any }) {
 
                 <div role="list" className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-                    {data.articles.map((item: any) => (
+                    {data.articles.map((item: ArticleData) => (
                         <ProjectCard
                             key={item.id}
                             project={item}
