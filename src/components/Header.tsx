@@ -20,6 +20,9 @@ export default function Header({ nombre }: Props) {
     const pathname = usePathname();
     const normalizedPath = pathname.split('/').slice(2).join('/') || '/';
     const locale = pathname.split('/')[1] || 'es';
+    const segments = pathname.split('/');
+    const withoutLocale = '/' + segments.slice(2).join('/');
+
     const isActive = true;
 
     useEffect(() => {
@@ -59,7 +62,7 @@ export default function Header({ nombre }: Props) {
 
                     {/* Language Selector & Mobile Menu */}
                     <div className="flex items-center gap-3">
-                        <LanguageSwitcher locale={locale} />
+                        <LanguageSwitcher locale={locale} path={withoutLocale} />
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors focus:outline-none rounded-lg"

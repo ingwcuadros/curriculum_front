@@ -32,5 +32,9 @@
         "button": "Download CV",
         "size": "420 KB",
         "ariaLabel": "Download CV in PDF format"
+    },
+    "articles": {
+        "title": "Articles",
+        "readmore": "Read more"
     }
 }
