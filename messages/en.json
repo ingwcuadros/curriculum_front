@@ -1,0 +1,40 @@
+{
+    "navigation": {
+        "home": "Home",
+        "articles": "Articles",
+        "contact": "Contact",
+        "language": "Language",
+        "pitch": "I help teams build scalable cloud solutions, focusing on product, architecture, and operations.",
+        "labelSocialMedia": "Connect with me",
+        "message": "Built with bits, bytes, and liters of coffee ☕",
+        "autorlabel": "Author's name"
+    },
+    "HomePage": {
+        "title": "Hello world!!"
+    },
+    "Projects": {
+        "more": "Read more",
+        "viewAll": "View all projects"
+    },
+    "Banner": {
+        "labelPrincipal": "Leading",
+        "labelSecundary": "Solutions",
+        "contactMe": "Contact Me",
+        "seeMyWork": "See My Work",
+        "openWork": "Open to collaborate on innovative projects",
+        "ariaCtaContact": "Go to contact page",
+        "ariaCtaProject": "Go to projects page"
+    },
+    "cv": {
+        "title": "Download my CV in PDF",
+        "subtitle": "Learn more about my professional journey",
+        "text": "Updated document",
+        "button": "Download CV",
+        "size": "420 KB",
+        "ariaLabel": "Download CV in PDF format"
+    },
+    "articles": {
+        "title": "Articles",
+        "readmore": "Read more"
+    }
+}

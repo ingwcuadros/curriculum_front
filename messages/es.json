@@ -1,0 +1,40 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "articles": "Articulos",
+        "contact": "Contacto",
+        "language": "Idioma",
+        "pitch": "Ayudo a equipos a construir soluciones escalables en la nube, con foco en producto, arquitectura y operación.",
+        "labelSocialMedia": "Conecta conmigo",
+        "message": "Construido con bits, bytes y litros de café ☕",
+        "autorlabel": "Nombre del autor"
+    },
+    "HomePage": {
+        "title": "Hola mundo!!"
+    },
+    "Projects": {
+        "more": "Leer más",
+        "viewAll": "Ver todos los proyectos"
+    },
+    "Banner": {
+        "labelPrincipal": "Liderando",
+        "labelSecundary": "Soluciones",
+        "contactMe": "Contáctame",
+        "seeMyWork": "Ver mi trabajo",
+        "openWork": "Abierto a colaborar en proyectos innovadores",
+        "ariaCtaContact": "Ir a página de contacto",
+        "ariaCtaProject": "Ir a página de proyectos"
+    },
+    "cv": {
+        "title": "Descarga mi CV en PDF",
+        "subtitle": "Conoce más sobre mi trayectoria profesional",
+        "text": "Documento actualizado",
+        "button": "Descargar CV",
+        "size": "420 KB",
+        "ariaLabel": "Descargar CV en formato PDF"
+    },
+    "articles": {
+        "title": "Articulos",
+        "readmore": "Leer más"
+    }
+}

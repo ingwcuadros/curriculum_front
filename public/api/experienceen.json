@@ -1,0 +1,50 @@
+{
+    "id": "37c2d8da-10d4-4d42-952c-e7b2a7efd8c0",
+    "experienceId": "f9749f25-6d85-4af2-a707-27ea5195d1bc",
+    "title": "Professional experience in development",
+    "content": "This is some content",
+    "articles": [
+        {
+            "id": "e81f9793-9141-430b-a51d-da32de697a85",
+            "title": "Delivery Manager — Globant",
+            "period": "2022–2025",
+            "url": null,
+            "content": "I led end-to-end deliveries, agile governance, and operational performance in multidisciplinary teams.",
+            "auxiliaryContent": "Card item work experience: Delivery Manager — Globant",
+            "tags": [
+                "Delivery",
+                "KPIs",
+                "Scrum",
+                "Stakeholders"
+            ]
+        },
+        {
+            "id": "583f0c8a-3acd-4520-9cf6-4f4314796774",
+            "title": "Technical Product Owner — Mercado Libre",
+            "period": "2020–2022",
+            "url": null,
+            "content": "I defined the technical backlog and prioritized features for scalability and user experience.",
+            "auxiliaryContent": "Card item work experience: Technical Product Owner — Mercado Libre",
+            "tags": [
+                "PO",
+                "Roadmap",
+                "APIs",
+                "UX"
+            ]
+        },
+        {
+            "id": "583f0c8a-3acd-4520-9cf6-4f4314796558",
+            "title": "Cloud Consultant / Architect — Accenture",
+            "period": "2018–2020",
+            "url": null,
+            "content": "I designed architectures on GCP/AWS, CI/CD automation, and observability.",
+            "auxiliaryContent": "Card item work experience: Cloud Consultant / Architect — Accenture",
+            "tags": [
+                "GCP",
+                "AWS",
+                "Terraform",
+                "CI/CD"
+            ]
+        }
+    ]
+}

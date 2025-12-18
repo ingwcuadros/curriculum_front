@@ -1,0 +1,17 @@
+{
+    "id": "ac560dfe-c64a-4051-beab-0ef490f74ebd",
+    "bannerId": "77eb58fc-79d4-4f1c-8308-d24a8245311f",
+    "title": "Walter Giovanny Cuadros Rincon",
+    "role": "Cloud Solutions Architect · Delivery Manager · Product Owner Técnico",
+    "textBanner": "Ayudo a equipos a construir soluciones escalables en la nube, con foco en producto, arquitectura y operación.",
+    "altImage": "Imagen representativa del banner",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face",
+    "tags": [
+        "Cloud",
+        "Architect",
+        "ProductOwner",
+        "DeliveryManager",
+        "AI",
+        "NestJS"
+    ]
+}
