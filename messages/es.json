@@ -35,6 +35,22 @@
     },
     "articles": {
         "title": "Articulos",
-        "readmore": "Leer más"
+        "readmore": "Leer más",
+        "bannerTitle": "Artículos",
+        "bannerSubtitle": "Explora mis publicaciones por categoría y tags.",
+        "categoryLabel": "Categoría",
+        "tagLabel": "Tag",
+        "allCategories": "Todas",
+        "allTags": "Todos",
+        "readArticle": "Leer artículo",
+        "pageOf": "Página",
+        "of": "de",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "noArticlesTitle": "No se encontraron artículos.",
+        "noArticlesText": "No hay artículos que coincidan con los filtros seleccionados. Intenta ajustar los filtros.",
+        "notes": "Notas",
+        "backToArticles": "Volver a artículos",
+        "loading": "Cargando..."
     }
 }

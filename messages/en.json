@@ -35,6 +35,22 @@
     },
     "articles": {
         "title": "Articles",
-        "readmore": "Read more"
+        "readmore": "Read more",
+        "bannerTitle": "Articles",
+        "bannerSubtitle": "Explore my posts by category and tags.",
+        "categoryLabel": "Category",
+        "tagLabel": "Tag",
+        "allCategories": "All",
+        "allTags": "All",
+        "readArticle": "Read article",
+        "pageOf": "Page",
+        "of": "of",
+        "previous": "Previous",
+        "next": "Next",
+        "noArticlesTitle": "No articles found.",
+        "noArticlesText": "There are no articles matching the selected filters. Try adjusting the filters.",
+        "notes": "Notes",
+        "backToArticles": "Back to articles",
+        "loading": "Loading..."
     }
 }
