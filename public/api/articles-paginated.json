@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "id": "a1",
+            "titulo": "Optimización de imágenes en GCP con Cloud Run",
+            "url": "optimizacion-imagenes-gcp-cloud-run",
+            "content": "## Introducción\nEste artículo explica cómo optimizar imágenes en GCP...",
+            "auxiliaryContent": "Demo y repositorio público disponible en GitHub.",
+            "fecha": "2025-11-10T00:00:00.000Z",
+            "promo": "Mejora tiempos de carga hasta 40%",
+            "image": null,
+            "categoria": "Arquitectura Cloud",
+            "tags": [
+                "GCP",
+                "Images",
+                "Optimización"
+            ]
+        },
+        {
+            "id": "a2",
+            "titulo": "Estrategias de embeddings con Pinecone y OpenAI",
+            "url": "estrategias-embeddings-pinecone-openai",
+            "content": "## Vector DB\nComparativa de índices...",
+            "auxiliaryContent": "Incluye guía de costos y calculadora de presupuesto.",
+            "fecha": "2025-10-22T00:00:00.000Z",
+            "promo": "Embeddings robustos y escalables",
+            "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+            "categoria": "AI/ML",
+            "tags": [
+                "AI",
+                "Pinecone",
+                "OpenAI"
+            ]
+        }
+    ],
+    "total": 2,
+    "page": 2,
+    "limit": 2,
+    "totalPages": 2
+}

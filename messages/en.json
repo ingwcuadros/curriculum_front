@@ -52,5 +52,9 @@
         "notes": "Notes",
         "backToArticles": "Back to articles",
         "loading": "Loading..."
+    },
+    "artivleDetail": {
+        "backToArticles": "Back to articles",
+        "loading": "Loading article..."
     }
 }

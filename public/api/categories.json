@@ -1,0 +1,34 @@
+[
+    {
+        "id": "uuid-cat-1",
+        "name": "Arquitectura Cloud"
+    },
+    {
+        "id": "uuid-cat-2",
+        "name": "AI/ML"
+    },
+    {
+        "id": "uuid-cat-3",
+        "name": "Delivery Management"
+    },
+    {
+        "id": "uuid-cat-4",
+        "name": "Product Ownership"
+    },
+    {
+        "id": "uuid-cat-5",
+        "name": "DevOps"
+    },
+    {
+        "id": "uuid-cat-6",
+        "name": "Observabilidad"
+    },
+    {
+        "id": "uuid-cat-7",
+        "name": "Arquitectura Frontend"
+    },
+    {
+        "id": "uuid-cat-8",
+        "name": "Planificación"
+    }
+]

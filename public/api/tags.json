@@ -1,0 +1,126 @@
+[
+    {
+        "id": "uuid-tag-1",
+        "name": "GCP"
+    },
+    {
+        "id": "uuid-tag-2",
+        "name": "Images"
+    },
+    {
+        "id": "uuid-tag-3",
+        "name": "Optimización"
+    },
+    {
+        "id": "uuid-tag-4",
+        "name": "AI"
+    },
+    {
+        "id": "uuid-tag-5",
+        "name": "Pinecone"
+    },
+    {
+        "id": "uuid-tag-6",
+        "name": "OpenAI"
+    },
+    {
+        "id": "uuid-tag-7",
+        "name": "NestJS"
+    },
+    {
+        "id": "uuid-tag-8",
+        "name": "VueJS"
+    },
+    {
+        "id": "uuid-tag-9",
+        "name": "NextJS"
+    },
+    {
+        "id": "uuid-tag-10",
+        "name": "Delivery"
+    },
+    {
+        "id": "uuid-tag-11",
+        "name": "KPIs"
+    },
+    {
+        "id": "uuid-tag-12",
+        "name": "Scrum"
+    },
+    {
+        "id": "uuid-tag-13",
+        "name": "PO"
+    },
+    {
+        "id": "uuid-tag-14",
+        "name": "Roadmap"
+    },
+    {
+        "id": "uuid-tag-15",
+        "name": "APIs"
+    },
+    {
+        "id": "uuid-tag-16",
+        "name": "UX"
+    },
+    {
+        "id": "uuid-tag-17",
+        "name": "Terraform"
+    },
+    {
+        "id": "uuid-tag-18",
+        "name": "CI/CD"
+    },
+    {
+        "id": "uuid-tag-19",
+        "name": "Monitoring"
+    },
+    {
+        "id": "uuid-tag-20",
+        "name": "Tracing"
+    },
+    {
+        "id": "uuid-tag-21",
+        "name": "SRE"
+    },
+    {
+        "id": "uuid-tag-22",
+        "name": "Ibexa"
+    },
+    {
+        "id": "uuid-tag-23",
+        "name": "CMS"
+    },
+    {
+        "id": "uuid-tag-24",
+        "name": "Frontend"
+    },
+    {
+        "id": "uuid-tag-25",
+        "name": "SEO"
+    },
+    {
+        "id": "uuid-tag-26",
+        "name": "Edge"
+    },
+    {
+        "id": "uuid-tag-27",
+        "name": "State"
+    },
+    {
+        "id": "uuid-tag-28",
+        "name": "Performance"
+    },
+    {
+        "id": "uuid-tag-29",
+        "name": "S3"
+    },
+    {
+        "id": "uuid-tag-30",
+        "name": "CDN"
+    },
+    {
+        "id": "uuid-tag-31",
+        "name": "Product"
+    }
+]

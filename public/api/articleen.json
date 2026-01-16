@@ -1,0 +1,16 @@
+{
+    "id": "a7",
+    "titulo": "Practical Observability: logs, metrics and traces",
+    "url": "practical-observability-logs-metrics-traces",
+    "content": "## Complete Stack\n- **Prometheus**: metrics\n- **Grafana**: visualization\n- **OpenTelemetry**: distributed traces\n\n## Smart Alerts\nAvoid alert fatigue:\n- Event aggregation\n- Automatic correlation\n- Associated runbooks",
+    "auxiliaryContent": "Includes cost guide and budget calculator.",
+    "fecha": "2025-05-09T00:00:00.000Z",
+    "promo": "Modern observability stack",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    "categoria": "Observability",
+    "tags": [
+        "Monitoring",
+        "Tracing",
+        "SRE"
+    ]
+}

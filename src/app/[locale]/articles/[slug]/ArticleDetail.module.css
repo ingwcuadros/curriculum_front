@@ -1,0 +1,85 @@
+/* Estilos personalizados para la vista detalle */
+
+/* Encabezados */
+.customProse h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4C9EEB;
+    /* Azul moderno */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4C9EEB;
+    padding-bottom: 0.3rem;
+}
+
+.customProse h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7C4DFF;
+    /* Morado elegante */
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Listas ordenadas y no ordenadas */
+.customProse ol,
+.customProse ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.customProse ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    /* Gris oscuro */
+}
+
+.customProse ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+/* Links */
+.customProse a {
+    color: #4C9EEB;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.customProse a:hover {
+    color: #7C4DFF;
+    border-bottom: 2px solid #7C4DFF;
+}
+
+/* Tablas */
+.customProse table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.customProse th {
+    background-color: #f3f4f6;
+    color: #4C9EEB;
+    font-weight: 700;
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.customProse td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.customProse tr:hover td {
+    background-color: #f9fafb;
+}
