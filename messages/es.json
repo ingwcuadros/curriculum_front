@@ -10,7 +10,8 @@
         "autorlabel": "Nombre del autor"
     },
     "HomePage": {
-        "title": "Hola mundo!!"
+        "title": "Walter Cuadros - Portafolio",
+        "description": "Soy Walter Giovanny Cuadros Rincon, Arquitecto de Soluciones Cloud, Delivery Manager y Product Owner Técnico."
     },
     "Projects": {
         "more": "Leer más",
@@ -56,5 +57,10 @@
     "artivleDetail": {
         "backToArticles": "Volver a artículos",
         "loading": "Cargando artículo..."
+    },
+    "notFoundPage": {
+        "title": "Página no encontrada",
+        "subtitle": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+        "goHome": "Volver al inicio"
     }
 }

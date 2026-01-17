@@ -10,6 +10,16 @@ import { ProjectsSchema, ProjectsData } from "@/schemas/projects.schema";
 import { AchievementsSchema, AchievementsData } from "@/schemas/achievements.schema";
 import { ExperienceSchema, ExperienceData } from "@/schemas/experience.schema";
 import { CVDownloadSchema, CVDownloadData } from "@/schemas/cvdownload.schema";
+import { generateMetadataForLocale } from '@/lib/metadata';
+import { getTranslations } from 'next-intl/server';
+
+
+export async function generateMetadata() {
+    const locale = await getLocale();
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tu-dominio.com';
+    const t = await getTranslations({ locale, namespace: 'HomePage' });
+    return generateMetadataForLocale({ locale, baseUrl, title: t('title'), description: t('description') });
+}
 
 export default async function HomePage() {
     const locale = await getLocale();

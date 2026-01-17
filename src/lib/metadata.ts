@@ -1,21 +1,20 @@
 
 interface GenerateMetadataParams {
     locale: string;
-    baseUrl?: string; // opcional para inyectar dominio
+    baseUrl?: string;
+    title?: string;
+    slug?: string;
+    description?: string;
+    image?: string;
 }
 
-export function generateMetadataForLocale({ locale, baseUrl = 'https://tu-dominio.com' }: GenerateMetadataParams) {
-    const urlForLocale = `${baseUrl}/${locale}`;
+export function generateMetadataForLocale({ locale, baseUrl = 'https://tu-dominio.com', title = 'Walter Giovanny Cuadros Rincon', slug = '', description = '', image = '' }: GenerateMetadataParams) {
 
-    const title =
-        locale === 'es'
-            ? 'Walter Giovanny Cuadros Rincon'
-            : 'Walter Giovanny Cuadros Rincon';
 
-    const description =
-        locale === 'es'
-            ? 'Arquitecto de Soluciones Cloud · Delivery Manager · Product Owner Técnico'
-            : 'Cloud Solutions Architect · Delivery Manager · Technical Product Owner';
+    const urlForLocale = slug
+        ? `${baseUrl}/${locale}/articles/${slug}`
+        : `${baseUrl}/${locale}`;
+
 
     return {
         title,
@@ -36,13 +35,10 @@ export function generateMetadataForLocale({ locale, baseUrl = 'https://tu-domini
             type: 'website',
             images: [
                 {
-                    url: `${baseUrl}/images/og-cover.jpg`,
+                    url: image || `${baseUrl}/images/og-cover.jpg`,
                     width: 1200,
                     height: 630,
-                    alt:
-                        locale === 'es'
-                            ? 'Portada del portfolio de Walter Giovanny Cuadros Rincon'
-                            : 'Walter Giovanny Cuadros Rincon portfolio cover',
+                    alt: description || 'Walter Giovanny Cuadros Rincon Portfolio',
                 },
             ],
         },
@@ -50,7 +46,7 @@ export function generateMetadataForLocale({ locale, baseUrl = 'https://tu-domini
             card: 'summary_large_image',
             title,
             description,
-            images: [`${baseUrl}/images/og-cover.jpg`],
+            images: [image || `${baseUrl}/images/og-cover.jpg`],
         },
     };
 }

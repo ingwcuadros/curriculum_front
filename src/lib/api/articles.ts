@@ -34,7 +34,7 @@ export async function getArticles(params: {
 
 export async function getArticleDetail(slug: string, lang: string): Promise<Article> {
     console.log("Fetching article detail for slug:", slug, "and lang:", lang);
-    const res = await fetch(`/api/article${lang}.json`, { cache: 'no-store' });
+    const res = await fetch(`http://localhost:3000/api/article${lang}.json`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Error al obtener el artículo');
     // Filtrar por slug (campo url)
 

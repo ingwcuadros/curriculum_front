@@ -6,19 +6,11 @@ import Footer from '@/components/Footer';
 import Script from 'next/script';
 import { getLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import { generateMetadataForLocale } from '@/lib/metadata';
 import { getPersonJsonLd, getWebSiteJsonLd } from '@/lib/jsonld';
 
 type Props = {
     children: React.ReactNode;
 };
-
-export async function generateMetadata() {
-    const locale = await getLocale();
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tu-dominio.com';
-    return generateMetadataForLocale({ locale, baseUrl });
-}
-
 
 
 export default async function RootLayout({ children }: Props) {

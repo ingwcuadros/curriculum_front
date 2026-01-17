@@ -10,7 +10,8 @@
         "autorlabel": "Author's name"
     },
     "HomePage": {
-        "title": "Hello world!!"
+        "title": "Walter Cuadros - Portfolio",
+        "description": "I am Walter Giovanny Cuadros Rincon, Cloud Solutions Architect, Delivery Manager, and Technical Product Owner."
     },
     "Projects": {
         "more": "Read more",
@@ -56,5 +57,10 @@
     "artivleDetail": {
         "backToArticles": "Back to articles",
         "loading": "Loading article..."
+    },
+    "notFoundPage": {
+        "title": "Page Not Found",
+        "subtitle": "Sorry, the page you are looking for does not exist or has been moved.",
+        "goHome": "Go back to Home"
     }
 }
