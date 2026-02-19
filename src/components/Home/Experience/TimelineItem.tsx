@@ -71,7 +71,7 @@ export default function TimelineItem({ experience, index, isLeft, prefersReduced
 
                     {/* Description */}
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                        {experience.content}
+                        {experience.promo}
                     </p>
 
                     {/* Tags */}

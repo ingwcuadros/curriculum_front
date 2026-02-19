@@ -6,16 +6,18 @@
     "articles": [
         {
             "id": "e81f9793-9141-430b-a51d-da32de697a85",
-            "title": "Delivery Manager — Globant",
-            "period": "2022–2025",
+            "title": "Desarrollador en Smart Data Automation",
+            "period": "2019–2021",
             "url": null,
-            "content": "Lideré entregas end-to-end, gobernanza ágil y performance operacional en equipos multidisciplinarios.",
+            "promo": "Construí soluciones web a la medida con PHP Codeigniter, JavaScript y buenas prácticas.",
             "auxiliaryContent": "Card item experiencia laboral: Delivery Manager — Globant",
             "tags": [
-                "Delivery",
-                "KPIs",
-                "Scrum",
-                "Stakeholders"
+                "PHP",
+                "CodeIgniter",
+                "JavaScript",
+                "MySQL",
+                "SEO",
+                "Github"
             ]
         },
         {
@@ -23,7 +25,7 @@
             "title": "Product Owner Técnico — Mercado Libre",
             "period": "2022–2025",
             "url": null,
-            "content": "Definí backlog técnico y prioricé funcionalidades para escalabilidad y experiencia del usuario.",
+            "promo": "Definí backlog técnico y prioricé funcionalidades para escalabilidad y experiencia del usuario.",
             "auxiliaryContent": "Card item experiencia laboral: Delivery Manager — Globant",
             "tags": [
                 "PO",
@@ -37,7 +39,7 @@
             "title": "onsultor Cloud / Arquitecto — Accenture",
             "period": "2022–2025",
             "url": null,
-            "content": "Diseñé arquitecturas en GCP/AWS, automatización CI/CD y observabilidad.",
+            "promo": "Diseñé arquitecturas en GCP/AWS, automatización CI/CD y observabilidad.",
             "auxiliaryContent": "Card item experiencia laboral: Delivery Manager — Globant",
             "tags": [
                 "GCP",

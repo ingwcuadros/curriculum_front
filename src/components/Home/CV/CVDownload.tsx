@@ -94,7 +94,7 @@ export default function CVDownload({ data }: CVDownloadProps) {
                                         className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
                                     >
                                         <motion.a
-                                            href={data.url}
+                                            href={data.filePath}
                                             download
                                             whileHover={{ scale: 1.02, y: -2 }}
                                             whileTap={{ scale: 0.98 }}

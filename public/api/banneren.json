@@ -2,16 +2,15 @@
     "id": "ac560dfe-c64a-4051-beab-0ef490f74ebd",
     "bannerId": "77eb58fc-79d4-4f1c-8308-d24a8245311f",
     "title": "Walter Giovanny Cuadros Rincon",
-    "role": "Cloud Solutions Architect · Delivery Manager · Technical Product Owner",
-    "textBanner": "I help teams build scalable cloud solutions, focusing on product, architecture, and operations.",
-    "altImage": "Representative image of the banner",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face",
+    "role": "Technical Product Owner / Project Manager / Cloud&AI",
+    "textBanner": "I connect the ‘what’ of the business with the ‘how’ of the code, leading cloud & AI products from rough idea to stable production with calm leadership, sustainable architectures and a genuine care for people, quality and learning.",
+    "altImage": "Technology professional leading a digital project, reviewing PHP and Node.js code along with software architecture diagrams in a modern workspace.",
+    "image": "https://cv-ingwalter.s3.us-east-2.amazonaws.com/imagenes/01dc9d0e-92c0-4cd6-87e3-8f11c4838b3e-fotoBanner.webp",
     "tags": [
-        "Cloud",
-        "Architect",
         "ProductOwner",
-        "DeliveryManager",
-        "AI",
-        "NestJS"
+        "ProjectManager",
+        "Architecture",
+        "Node.js",
+        "Cloud&AI"
     ]
 }

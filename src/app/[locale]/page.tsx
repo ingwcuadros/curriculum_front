@@ -25,11 +25,11 @@ export default async function HomePage() {
     const locale = await getLocale();
 
     const [bannerRes, projectsRes, academicRes, experienceRes, cvRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/banner${locale}.json`, { next: { revalidate: 3600 } }),
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects${locale}.json`, { next: { revalidate: 3600 } }),
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/academic${locale}.json`, { next: { revalidate: 3600 } }),
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/experience${locale}.json`, { next: { revalidate: 3600 } }),
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/cvdownload.json`, { next: { revalidate: 3600 } }),
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/banners/64490ccc-fcdb-4549-80d6-2547c402f4d7/?lang=${locale}`, { next: { revalidate: 3600 } }),
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/articles/limited?lang=${locale}`, { next: { revalidate: 3600 } }),
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/academic-achievements/b154ba94-cf40-4733-9a69-2c81be50fac6?lang=${locale}`, { next: { revalidate: 3600 } }),
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/experiences/19db0d33-f6e1-4c6f-8693-79806a2323a1?lang=${locale}`, { next: { revalidate: 3600 } }),
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/pdf`, { next: { revalidate: 3600 } }),
     ]);
 
     const [rawBannerData, rawProjectsData, rawAchievementsData, rawExperienceData, rawCVData] = await Promise.all([
@@ -39,7 +39,6 @@ export default async function HomePage() {
         experienceRes.json(),
         cvRes.json()
     ]);
-
     const bannerData: BannerData = BannerSchema.parse(rawBannerData);
     const projectsData: ProjectsData = ProjectsSchema.parse(rawProjectsData);
     const achievementsData: AchievementsData = AchievementsSchema.parse(rawAchievementsData);

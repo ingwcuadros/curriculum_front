@@ -13,10 +13,6 @@ const ArticleSchema = z.object({
 
 // Schema para Projects
 export const ProjectsSchema = z.object({
-    id: z.uuid(),
-    proyectId: z.uuid(),
-    title: z.string(),
-    content: z.string(),
     articles: z.array(ArticleSchema)
 });
 

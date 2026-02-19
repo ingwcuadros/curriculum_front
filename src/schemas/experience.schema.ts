@@ -6,8 +6,8 @@ const ExperienceArticleSchema = z.object({
     id: z.uuid(),
     title: z.string(),
     period: z.string(),
-    url: z.url().nullable(), // Puede ser null
-    content: z.string(),
+    url: z.string(), // Puede ser null
+    promo: z.string(),
     auxiliaryContent: z.string(),
     tags: z.array(z.string())
 });
