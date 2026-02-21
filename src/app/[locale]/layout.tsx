@@ -7,6 +7,7 @@ import Script from 'next/script';
 import { getLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { getPersonJsonLd, getWebSiteJsonLd } from '@/lib/jsonld';
+import { ArticleProvider } from '@/context/ArticleContext';
 
 type Props = {
     children: React.ReactNode;
@@ -41,11 +42,13 @@ export default async function RootLayout({ children }: Props) {
                     className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-black focus:text-white focus:px-3 focus:py-2 focus:rounded"
                 />
                 <NextIntlClientProvider>
-                    <Header nombre="Walter Cuadros" />
-                    <main id="main-content" className="min-h-screen">
-                        {children}
-                    </main>
-                    <Footer />
+                    <ArticleProvider>
+                        <Header nombre="Walter Cuadros" />
+                        <main id="main-content" className="min-h-screen">
+                            {children}
+                        </main>
+                        <Footer />
+                    </ArticleProvider>
                 </NextIntlClientProvider>
             </body>
         </html >

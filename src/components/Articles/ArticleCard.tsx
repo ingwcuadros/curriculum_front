@@ -12,7 +12,7 @@ interface ArticleCardProps {
         titulo: string;
         url: string;
         fecha: string;
-        categoria: string;
+        category: string;
         tags?: string[];
         image?: string | null;
     };
@@ -74,7 +74,7 @@ export default function ArticleCard({ article, index, locale }: ArticleCardProps
                 {/* Meta: Categoría y Fecha */}
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                     <span className="inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-full bg-[#7C4DFF]/10 text-[#7C4DFF] border border-[#7C4DFF]/20">
-                        {article.categoria}
+                        {article.category}
                     </span>
                     <span className="flex items-center gap-1 text-xs text-slate-500">
                         <Calendar className="w-3.5 h-3.5" />

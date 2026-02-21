@@ -1,34 +1,36 @@
-
 "use client";
+
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown';
 import { Calendar, ArrowLeft, Tag as TagIcon, User } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useParams } from "next/navigation";
-import remarkGfm from "remark-gfm";
-import { getArticleDetail } from "@/lib/api/articles";
-import styles from "./ArticleDetail.module.css";
+import remarkGfm from 'remark-gfm';
+import { ArticleData } from '@/schemas/article.schema';
+import styles from './ArticleDetail.module.css';
+import { useArticleInfo } from "@/context/ArticleContext";
+import { useEffect } from 'react';
 
-// src/app/[locale]/articles/[slug]/page.tsx
-export default function ArticleDetail() {
+interface ArticleDetailProps {
+    article: ArticleData;
+}
 
+// src/app/[locale]/articles/[slug]/ArticleDetail.tsx
+export default function ArticleDetail({ article }: ArticleDetailProps) {
 
-    const t = useTranslations('artivleDetail');
-    const locale = useLocale();
-    const { slug } = useParams();
-    const [article, setArticle] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
+    const { setTranslations } = useArticleInfo();
 
     useEffect(() => {
-        if (!slug || typeof slug !== 'string') return;
-        setLoading(true);
-        getArticleDetail(slug, locale)
-            .then((data) => setArticle(data))
-            .finally(() => setLoading(false));
-    }, [slug, locale]);
+        // Guardamos todas las urls por idioma en el contexto global
+        setTranslations(article.translations);
 
+        return () => setTranslations(null); // limpiar al salir
+    }, [article]);
+
+    console.log('Received article data:', article);
+
+    const t = useTranslations('artivleDetail'); // ojo con el typo en la key del namespace
+    const locale = useLocale();
 
     const formatDate = (dateStr: string) => {
         const date = new Date(dateStr);
@@ -36,16 +38,22 @@ export default function ArticleDetail() {
         return date.toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
         });
     };
+
     const prefersReducedMotion =
         typeof window !== 'undefined' &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-
-    if (loading) return <p className="p-6 text-center">Cargando artículo...</p>;
-    if (!article) return <p className="p-6 text-center text-red-500">Artículo no encontrado</p>;
+    // defensivo: si por alguna razón article viene null/undefined
+    if (!article) {
+        return (
+            <p className="p-6 text-center text-red-500">
+                Artículo no encontrado
+            </p>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-[#F6F7F9]">
@@ -64,8 +72,7 @@ export default function ArticleDetail() {
                             className="w-full h-full object-cover"
                         />
                     </motion.div>
-                )
-                }
+                )}
 
                 {/* Content Container */}
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
@@ -77,7 +84,7 @@ export default function ArticleDetail() {
                         className="mb-8"
                     >
                         <Link
-                            href={'/articles'}
+                            href="/articles"
                             className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[#4C9EEB] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2 rounded-sm"
                         >
                             <ArrowLeft className="w-4 h-4" />
@@ -99,7 +106,9 @@ export default function ArticleDetail() {
                             </span>
                             <span className="flex items-center gap-1.5 text-sm text-slate-500">
                                 <Calendar className="w-4 h-4" />
-                                <time dateTime={article.fecha}>{formatDate(article.fecha)}</time>
+                                <time dateTime={article.fecha}>
+                                    {formatDate(article.fecha)}
+                                </time>
                             </span>
                         </div>
 
@@ -118,7 +127,7 @@ export default function ArticleDetail() {
                         {/* Tags */}
                         {article.tags && article.tags.length > 0 && (
                             <div className="flex flex-wrap gap-2">
-                                {article.tags.map((tag: string) => (
+                                {article.tags.map((tag) => (
                                     <span
                                         key={tag}
                                         className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium rounded-full bg-[#22D3EE]/10 text-[#0891B2] border border-[#22D3EE]/20"
@@ -136,8 +145,12 @@ export default function ArticleDetail() {
                                 <User className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold text-slate-900">Walter Giovanny Cuadros Rincon</p>
-                                <p className="text-xs text-slate-500">Cloud Solutions Architect</p>
+                                <p className="text-sm font-semibold text-slate-900">
+                                    Walter Giovanny Cuadros Rincon
+                                </p>
+                                <p className="text-xs text-slate-500">
+                                    Cloud Solutions Architect
+                                </p>
                             </div>
                         </div>
                     </motion.div>
@@ -170,25 +183,19 @@ export default function ArticleDetail() {
                 "
                                 style={{ lineHeight: '1.7' }}
                             >
-
-
                                 <div className={`prose prose-slate max-w-none ${styles.customProse}`}>
                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                         {article.content}
                                     </ReactMarkdown>
                                 </div>
-
-
                             </div>
                         </article>
-
-
                     </motion.div>
 
                     {/* Bottom Back Link */}
                     <div className="mt-12 pt-8 border-t border-slate-200">
                         <Link
-                            href={'/articles'}
+                            href="/articles"
                             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#4C9EEB] to-[#7C4DFF] rounded-xl hover:shadow-lg hover:shadow-[#4C9EEB]/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2"
                         >
                             <ArrowLeft className="w-4 h-4" />
@@ -196,9 +203,8 @@ export default function ArticleDetail() {
                         </Link>
                     </div>
                 </div>
-            </div >
+            </div>
             <div className="h-16" />
-        </div >
+        </div>
     );
 }
-
