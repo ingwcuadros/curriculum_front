@@ -8,6 +8,9 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import NavItem from '@/components/navigation/NavItem';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Image from "next/image";
+
+
 
 type Props = {
     nombre: string;
@@ -32,7 +35,7 @@ export default function Header({ nombre }: Props) {
     }, []);
 
     const navItems = [
-        { id: 'home', label: t('home'), href: `/` },
+        { id: 'home', label: t('home'), href: `/`, isLogo: true },
         { id: 'articles', label: t('articles'), href: `/articles` },
         { id: 'contact', label: t('contact'), href: `/contact` }
     ];
@@ -45,13 +48,22 @@ export default function Header({ nombre }: Props) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 md:h-20 ">
                     {/* Logo */}
-                    <Link href="/" aria-label={`Go to Walter Cuadros homepage`} className="text-2xl font-bold text-white tracking-tight focus:outline-none rounded-lg px-2 py-1" >
-                        <span className="text-[#4C9EEB]">{'{'}</span>
-                        <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                            {nombre.split(' ')[0]}
-                        </span>
-                        <span className="text-[#7C4DFF]">{'}'}</span>
+
+                    <Link
+                        href="/"
+                        aria-label="Ir a la página principal de Walter Cuadros"
+                        className="flex items-center focus:outline-none rounded-lg px-2 py-1"
+                    >
+                        <Image
+                            src="/logoingWalter.png"
+                            alt="Logo de Walter Cuadros"
+                            width={220}   // valor lógico base
+                            height={80}   // valor lógico base
+                            className="" // controla el tamaño visual: 32px de alto
+                            priority      // ayuda al LCP si el logo está en el header principal
+                        />
                     </Link>
+
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">

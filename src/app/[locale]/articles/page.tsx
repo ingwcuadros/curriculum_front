@@ -44,7 +44,7 @@ export default async function ArticlesPage({ params, searchParams }: ArticlesPag
     const [articlesData, filtersData] = await Promise.all([
         getPaginatedArticles({
             page: currentPage,
-            limit: 2,
+            limit: 6,
             category: selectedCategory || undefined,
             tag: selectedTag || undefined,
             lang: locale,

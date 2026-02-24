@@ -62,5 +62,32 @@
         "title": "Página no encontrada",
         "subtitle": "Lo sentimos, la página que buscas no existe o ha sido movida.",
         "goHome": "Volver al inicio"
+    },
+    "contactPage": {
+        "title": "Conversemos",
+        "subtitle": "sobre nuevas oportunidades.",
+        "tagline": "Disponible para proyectos",
+        "nameLabel": "Nombre",
+        "emailLabel": "Correo electrónico",
+        "message": "Disponible para explorar oportunidades donde equipos, tecnología y visión de producto se conectan para generar impacto real.",
+        "cta": "Enviar mensaje",
+        "submitButton": "Enviar mensaje",
+        "successMessage": "¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.",
+        "errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
+    },
+    "contactForm": {
+        "sectionTitle": "Formulario",
+        "title": "Envía tu",
+        "subtitle": "mensaje",
+        "description": "Rellena los campos y me pondré en contacto contigo lo antes posible.",
+        "labelName": "Nombre",
+        "labelEmail": "Email",
+        "labelMessage": "Mensaje",
+        "namePlaceholder": "Tu nombre",
+        "emailPlaceholder": "Tu correo electrónico",
+        "messagePlaceholder": "Cuéntame brevemente sobre tu necesidad o proyecto",
+        "submitButton": "Enviar mensaje",
+        "ways": "OTRAS VÍAS",
+        "message": "Contacto alternativo"
     }
 }

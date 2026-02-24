@@ -62,5 +62,32 @@
         "title": "Page Not Found",
         "subtitle": "Sorry, the page you are looking for does not exist or has been moved.",
         "goHome": "Go back to Home"
+    },
+    "contactPage": {
+        "title": "Let's Talk",
+        "subtitle": "about new opportunities.",
+        "tagline": "Available for projects",
+        "nameLabel": "Name",
+        "emailLabel": "Email",
+        "message": "Available to explore opportunities where teams, technology and product vision connect to generate real impact.",
+        "cta": "Send Message",
+        "submitButton": "Send Message",
+        "successMessage": "Thank you for your message! I will contact you soon.",
+        "errorMessage": "There was an error sending your message. Please try again later."
+    },
+    "contactForm": {
+        "sectionTitle": "Form",
+        "title": "Send your",
+        "subtitle": "message",
+        "description": "Fill in the fields and I will contact you as soon as possible.",
+        "labelName": "Name",
+        "labelEmail": "Email",
+        "labelMessage": "Message",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "Your email",
+        "messagePlaceholder": "Tell me briefly about your need or project",
+        "submitButton": "Send Message",
+        "ways": "OTHER WAYS",
+        "message": "Alternative contact"
     }
 }
