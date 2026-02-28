@@ -45,12 +45,12 @@ export default function ArticleCard({ article, index, locale }: ArticleCardProps
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="group relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-[#4C9EEB]/10 transition-all duration-300"
+            className="group relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-[#22D3EE]/20 hover:-translate-y-2 hover:border-[#22D3EE]/50 hover:bg-white/10 transition-all duration-300"
         >
             {/* Imagen */}
             <Link
                 href={`/${locale}/articles/${article.url}`}
-                className="block aspect-video overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4C9EEB]"
+                className="block relative aspect-video overflow-hidden bg-gradient-to-br from-white/5 to-white/10"
                 aria-label={`${t("readArticle")}: ${article.titulo}`}
             >
                 {article.image ? (
@@ -58,36 +58,33 @@ export default function ArticleCard({ article, index, locale }: ArticleCardProps
                         src={article.image}
                         alt={article.titulo}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#4C9EEB]/10 via-[#7C4DFF]/10 to-[#22D3EE]/10">
-                        <div className="text-4xl font-bold text-slate-300">
+                    <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#22D3EE]/20 to-[#8B5CF6]/20 border border-white/10 flex items-center justify-center">
                             {article.titulo?.charAt(0) || "A"}
                         </div>
                     </div>
                 )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
 
             {/* Contenido */}
-            <div className="p-5 lg:p-6">
+            <div className="p-6">
                 {/* Meta: Categoría y Fecha */}
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-full bg-[#7C4DFF]/10 text-[#7C4DFF] border border-[#7C4DFF]/20">
+                <div className="flex items-center gap-3 mb-3 flex-wrap">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#22D3EE]/20 border border-[#22D3EE]/40 text-[#22D3EE] text-xs font-semibold backdrop-blur-sm">
                         {article.category}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-slate-500">
-                        <Calendar className="w-3.5 h-3.5" />
-                        <time dateTime={article.fecha}>{formatDate(article.fecha)}</time>
-                    </span>
+
                 </div>
 
                 {/* Título */}
                 <Link
                     href={`/${locale}/articles/${article.url}`}
-                    className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2 rounded-sm"
                 >
-                    <h3 className="text-lg font-bold text-slate-900 line-clamp-2 group-hover:text-[#4C9EEB] transition-colors duration-200 mb-2">
+                    <h3 className="text-xl font-bold text-white mb-4 leading-tight line-clamp-2 group-hover:text-[#22D3EE] transition-colors duration-300">
                         {article.titulo}
                     </h3>
                 </Link>

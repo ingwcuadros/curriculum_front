@@ -15,7 +15,7 @@
     },
     "Projects": {
         "more": "Leer más",
-        "viewAll": "Ver todos los proyectos"
+        "viewAll": "Ver mi trabajo"
     },
     "Banner": {
         "labelPrincipal": "Liderando",
@@ -41,8 +41,8 @@
         "bannerSubtitle": "Explora mis publicaciones por categoría y tags.",
         "categoryLabel": "Categoría",
         "tagLabel": "Tag",
-        "allCategories": "Todas",
-        "allTags": "Todos",
+        "allCategories": "Todas las categorías",
+        "allTags": "Todos los tags",
         "readArticle": "Leer artículo",
         "pageOf": "Página",
         "of": "de",
@@ -52,9 +52,10 @@
         "noArticlesText": "No hay artículos que coincidan con los filtros seleccionados. Intenta ajustar los filtros.",
         "notes": "Notas",
         "backToArticles": "Volver a artículos",
-        "loading": "Cargando..."
+        "loading": "Cargando...",
+        "filterBy": "Filtrar por"
     },
-    "artivleDetail": {
+    "articleDetail": {
         "backToArticles": "Volver a artículos",
         "loading": "Cargando artículo..."
     },
@@ -89,5 +90,24 @@
         "submitButton": "Enviar mensaje",
         "ways": "OTRAS VÍAS",
         "message": "Contacto alternativo"
+    },
+    "contactSuccess": {
+        "title": "¡Gracias por tu mensaje!",
+        "subtitle": "Me pondré en contacto contigo pronto."
+    },
+    "contactMeta": {
+        "title": "Contáctame - Walter Cuadros",
+        "description": "Disponible para explorar oportunidades donde equipos, tecnología y visión de producto se conectan para generar impacto real.",
+        "image": "/images/promoContact.webp"
+    },
+    "homeMeta": {
+        "title": "Portafolio - Walter Cuadros",
+        "description": "Soy Walter Giovanny Cuadros Rincon, Tecnical Product Owner, Tecnical Product Manager, Delivery Manager.",
+        "image": "/images/promoHome.webp"
+    },
+    "articlesMeta": {
+        "title": "Artículos - Walter Cuadros",
+        "description": "Explora mis artículos sobre tecnología, arquitectura de software, desarrollo de productos y liderazgo técnico.",
+        "image": "/images/bannrtArticles.webp"
     }
 }

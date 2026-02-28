@@ -119,6 +119,7 @@ export default function Banner({ data }: BannerProps) {
                         >
                             <motion.a
                                 href={'/contact'}
+                                target='_blank'
                                 whileHover={{ scale: 1.02, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                                 aria-label={traslation('ariaCtaContact')}
@@ -133,6 +134,7 @@ export default function Banner({ data }: BannerProps) {
 
                             <motion.a
                                 href={'/articles'}
+                                target='_blank'
                                 whileHover={{ scale: 1.02, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                                 aria-label={traslation('ariaCtaProject')}

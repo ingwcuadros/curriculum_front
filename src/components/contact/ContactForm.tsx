@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { FIELD_CONFIG } from "@/components/contact/FIELD_CONFIG";
 import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 
 
@@ -79,6 +80,7 @@ function InputField({ id, config, value, onChange, error, touched }: {
 }
 
 function SuccessState() {
+    const t = useTranslations('contactSuccess');
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -123,9 +125,9 @@ function SuccessState() {
                 <CheckCircle2 className="w-8 h-8 text-cyan-400" />
             </motion.div>
 
-            <h3 className="text-xl font-semibold text-white mb-2">¡Gracias!</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">{t('title')}</h3>
             <p className="text-slate-400 text-sm">
-                Te responderé en menos de 24 horas.
+                {t('subtitle')}
             </p>
         </motion.div>
     );
@@ -155,36 +157,92 @@ export default function ContactForm() {
         setErrors((p) => ({ ...p, [field]: err }));
     };
 
-    const handleSubmit = async (e) => {
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-        if (cooldown || status === "loading") return;
+        console.log('[ContactForm] submit clicked'); // 👈 Log 1
+
+        console.log('[ContactForm] status, cooldown:', status, cooldown);
+        if (cooldown || status === "loading") {
+            console.log('[ContactForm] Early return: cooldown/loading');
+            return;
+        }
 
         // Check honeypot
-        if (honeypotRef.current?.value) return;
+
+        if (honeypotRef.current?.value) {
+            console.log('[ContactForm] Early return: honeypot filled');
+            return;
+        }
 
         // Validate all
         const allTouched = { name: true, email: true, message: true };
-        setTouched(allTouched);
+        setTouched(allTouched as any);
 
-        const newErrors = {};
-        Object.keys(FIELD_CONFIG[locale]).forEach((key) => {
-            const err = FIELD_CONFIG[locale][key].validate(form[key]);
+        const newErrors: Record<string, string | null> = {};
+
+
+        Object.keys(FIELD_CONFIG[locale] || {}).forEach((key) => {
+            const err = FIELD_CONFIG[locale][key].validate((form as any)[key]);
             if (err) newErrors[key] = err;
         });
-        setErrors(newErrors);
 
-        if (Object.keys(newErrors).length > 0) return;
+        console.log('[ContactForm] newErrors:', newErrors);
+        setErrors(newErrors as any);
+
+        if (Object.keys(newErrors).length > 0) {
+
+            return;
+        }
+
+
 
         setStatus("loading");
         setCooldown(true);
 
-        // Simulate POST (replace endpoint later)
-        await new Promise((r) => setTimeout(r, 1800));
+        try {
 
-        setStatus("success");
-        setTimeout(() => setCooldown(false), 2000);
+
+            if (typeof window === "undefined" || typeof grecaptcha === "undefined") {
+                throw new Error("reCAPTCHA no está disponible");
+            }
+            await new Promise<void>((resolve) => {
+                grecaptcha.ready(() => resolve());
+            });
+
+            const recaptchaToken = await grecaptcha.execute(
+                process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string,
+                { action: "submit" }
+            );
+
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...form, recaptchaToken }),
+            });
+
+            console.log('[ContactForm] /api/contact response status:', res.status);
+
+            if (!res.ok) {
+                const text = await res.text().catch(() => '');
+                console.error('[ContactForm] Response not OK, body:', text);
+                throw new Error('Error al enviar el formulario');
+            }
+
+            setStatus('success');
+            setForm({ name: "", email: "", message: "" });
+        } catch (err) {
+            console.error('[ContactForm] catch error:', err);
+            setStatus('error');
+        } finally {
+            setTimeout(() => {
+                console.log('[ContactForm] cooldown ended');
+                setCooldown(false);
+            }, 2000);
+        }
     };
-
     if (status === "success") {
         return (
             <div
@@ -202,7 +260,7 @@ export default function ContactForm() {
             <input
                 ref={honeypotRef}
                 type="text"
-                name="website"
+                name="middleField"
                 tabIndex={-1}
                 autoComplete="off"
                 className="absolute opacity-0 h-0 w-0 pointer-events-none"

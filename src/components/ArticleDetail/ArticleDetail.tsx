@@ -29,24 +29,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
 
     console.log('Received article data:', article);
 
-    const t = useTranslations('artivleDetail'); // ojo con el typo en la key del namespace
-    const locale = useLocale();
-
-    const formatDate = (dateStr: string) => {
-        const date = new Date(dateStr);
-        console.log('Formatting date:', dateStr, 'to', locale);
-        return date.toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
-    };
-
+    const t = useTranslations('articleDetail');
     const prefersReducedMotion =
         typeof window !== 'undefined' &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // defensivo: si por alguna razón article viene null/undefined
     if (!article) {
         return (
             <p className="p-6 text-center text-red-500">
@@ -104,12 +90,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                             <span className="inline-flex items-center px-3 py-1 text-sm font-semibold rounded-full bg-[#7C4DFF]/10 text-[#7C4DFF] border border-[#7C4DFF]/20">
                                 {article.categoria}
                             </span>
-                            <span className="flex items-center gap-1.5 text-sm text-slate-500">
-                                <Calendar className="w-4 h-4" />
-                                <time dateTime={article.fecha}>
-                                    {formatDate(article.fecha)}
-                                </time>
-                            </span>
+
                         </div>
 
                         {/* Title */}

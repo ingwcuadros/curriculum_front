@@ -49,7 +49,10 @@ export default async function RootLayout({ children }: Props) {
                         </main>
                         <Footer />
                     </ArticleProvider>
+
                 </NextIntlClientProvider>
+
+
             </body>
         </html >
     );

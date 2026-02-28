@@ -4,22 +4,21 @@
 
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Linkedin, Github, Twitter, Globe, Heart } from 'lucide-react';
+import { Mail, Linkedin, FileUser } from "lucide-react";
 
 export default function Footer() {
 
     const t = useTranslations('navigation');
     const socialIcons = {
+        Mail: Mail,
         LinkedIn: Linkedin,
-        GitHub: Github,
-        X: Twitter,
-        Portfolio: Globe,
+        Portfolio: FileUser,
     };
 
     const techBadges = [
         { name: 'NestJS', color: '#E0234E' },
-        { name: 'Vue/Next', color: '#42B883' },
-        { name: 'GCP', color: '#4285F4' },
+        { name: 'IA', color: '#42B883' },
+        { name: 'TCP/TCO', color: '#4285F4' },
         { name: 'Ibexa CMS', color: '#F15A24' },
     ];
 
@@ -31,10 +30,9 @@ export default function Footer() {
         url_foto_principal: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face",
         url_cv_pdf: "#",
         links_redes: {
+            Mail: "mailto:ingwcuadros@gmail.com",
             LinkedIn: "https://linkedin.com",
-            GitHub: "https://github.com",
-            X: "https://x.com",
-            Portfolio: "#"
+            Portfolio: "/cv/cvwaltercuadros.pdf"
         },
         año_actual: new Date().getFullYear(),
     };
@@ -94,7 +92,7 @@ export default function Footer() {
                         <h3 className="text-white font-semibold mb-6">{t("labelSocialMedia")}</h3>
                         <div role="list" className=" flex flex-wrap gap-3">
                             {Object.entries(data.links_redes).map(([name, url], index) => {
-                                const Icon = socialIcons[name as keyof typeof socialIcons] || Globe;
+                                const Icon = socialIcons[name as keyof typeof socialIcons] || FileUser;
                                 return (
                                     <motion.a
                                         key={name}

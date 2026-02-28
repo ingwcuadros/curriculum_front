@@ -3,6 +3,8 @@
 
 import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from 'framer-motion';
+
 
 interface ArticlePaginationProps {
     currentPage: number;
@@ -39,71 +41,47 @@ export default function ArticlePagination({
         }, []);
 
     return (
-        <nav
-            className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-2xl border border-slate-100 shadow-sm p-4 lg:p-5 mt-6"
-            aria-label="Pagination"
+        <motion.nav
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center justify-center gap-4 mt-12"
+            aria-label="Paginación de artículos"
         >
-            {/* Información de página */}
-            <p className="text-sm text-slate-600 font-medium order-2 sm:order-1">
-                {pageText}
-            </p>
+            <button
+                onClick={() => onPageChange(currentPage - 1)}
+                disabled={!canGoPrev}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#0B1020] ${canGoPrev
+                    ? 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-[#22D3EE] hover:text-[#22D3EE] hover:-translate-x-1 shadow-lg'
+                    : 'bg-white/5 border border-white/10 text-gray-500 cursor-not-allowed opacity-50'
+                    }`}
+                aria-label={t("previous")}
+            >
+                <ChevronLeft className="w-4 h-4" />
+                {t("previous")}
+            </button>
 
-            {/* Botones de navegación */}
-            <div className="flex items-center gap-3 order-1 sm:order-2">
-                {/* Botón anterior */}
-                <button
-                    onClick={() => onPageChange(currentPage - 1)}
-                    disabled={!canGoPrev}
-                    className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2 ${canGoPrev
-                            ? "text-slate-700 bg-slate-100 hover:bg-slate-200 hover:text-[#4C9EEB]"
-                            : "text-slate-400 bg-slate-50 cursor-not-allowed"
-                        }`}
-                    aria-label={t("previous")}
-                >
-                    <ChevronLeft className="w-4 h-4" />
-                    <span className="hidden sm:inline">{t("previous")}</span>
-                </button>
-
-                {/* Números de página */}
-                <div className="hidden md:flex items-center gap-1">
-                    {pages.map((item, idx) =>
-                        item === "..." ? (
-                            <span
-                                key={`ellipsis-${idx}`}
-                                className="px-2 text-slate-400 select-none"
-                            >
-                                ...
-                            </span>
-                        ) : (
-                            <button
-                                key={item}
-                                onClick={() => onPageChange(item as number)}
-                                className={`w-10 h-10 text-sm font-semibold rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] ${currentPage === item
-                                        ? "bg-gradient-to-r from-[#4C9EEB] to-[#7C4DFF] text-white shadow-lg shadow-[#4C9EEB]/30"
-                                        : "text-slate-600 hover:bg-slate-100"
-                                    }`}
-                                aria-current={currentPage === item ? "page" : undefined}
-                            >
-                                {item}
-                            </button>
-                        )
-                    )}
-                </div>
-
-                {/* Botón siguiente */}
-                <button
-                    onClick={() => onPageChange(currentPage + 1)}
-                    disabled={!canGoNext}
-                    className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4C9EEB] focus-visible:ring-offset-2 ${canGoNext
-                            ? "text-slate-700 bg-slate-100 hover:bg-slate-200 hover:text-[#4C9EEB]"
-                            : "text-slate-400 bg-slate-50 cursor-not-allowed"
-                        }`}
-                    aria-label={t("next")}
-                >
-                    <span className="hidden sm:inline">{t("next")}</span>
-                    <ChevronRight className="w-4 h-4" />
-                </button>
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg">
+                <span className="text-sm font-medium text-gray-300">
+                    {t("pageOf")}{' '}
+                    <span className="text-[#22D3EE] font-bold">{currentPage}</span>
+                    {' '}{t("of")}{' '}
+                    <span className="text-white font-bold">{totalPages}</span>
+                </span>
             </div>
-        </nav>
+
+            <button
+                onClick={() => onPageChange(currentPage + 1)}
+                disabled={!canGoNext}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#0B1020] ${canGoNext
+                    ? 'bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 hover:border-[#22D3EE] hover:text-[#22D3EE] hover:translate-x-1 shadow-lg'
+                    : 'bg-white/5 border border-white/10 text-gray-500 cursor-not-allowed opacity-50'
+                    }`}
+                aria-label={t("next")}
+            >
+                {t("next")}
+                <ChevronRight className="w-4 h-4" />
+            </button>
+        </motion.nav>
     );
 }

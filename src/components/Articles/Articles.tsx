@@ -76,7 +76,7 @@ export default function Articles({
     };
 
     return (
-        <div className="min-h-screen bg-[#F6F7F9]">
+        <div className="min-h-screen bg-[#0B1020]">
             {/* Banner */}
             <div className="pt-16 lg:pt-20">
                 <ArticleBanner />

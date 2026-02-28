@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FileText, Download, Sparkles } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { FileText, Download } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import CVIllustration from './CVIlustration';
 import { CVDownloadData } from "@/schemas/cvdownload.schema";
 
@@ -15,6 +15,8 @@ interface CVDownloadProps {
 
 export default function CVDownload({ data }: CVDownloadProps) {
     const t = useTranslations('cv');
+    const locale = useLocale();
+    const file = locale === 'es' ? data.filePath : data.filePathEn;
     return (
         <section aria-labelledby="cv-title" className="relative py-24 lg:py-32 overflow-hidden">
             {/* Background */}
@@ -94,7 +96,8 @@ export default function CVDownload({ data }: CVDownloadProps) {
                                         className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
                                     >
                                         <motion.a
-                                            href={data.filePath}
+                                            href={file}
+                                            target='_blank'
                                             download
                                             whileHover={{ scale: 1.02, y: -2 }}
                                             whileTap={{ scale: 0.98 }}

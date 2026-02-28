@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { locale: string; s
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tu-dominio.com';
     const article = await getArticleDetail(slug, locale);
 
-    return generateMetadataForLocale({ locale, baseUrl, title: article?.titulo || 'Default Title', description: article?.promo || 'Default Description', image: article?.image || '', slug });
+    return generateMetadataForLocale({ locale, baseUrl, title: article?.titulo || 'Default Title', typePage: 'article-detail', description: article?.promo || 'Default Description', image: article?.image || '', slug });
 
 }
 

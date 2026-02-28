@@ -12,7 +12,7 @@ export default function ArticleBanner() {
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')`,
+                    backgroundImage: `url('/images/bannerArticles.webp')`,
                 }}
             >
                 {/* Gradient Overlay */}

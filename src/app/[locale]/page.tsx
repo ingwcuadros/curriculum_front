@@ -17,8 +17,8 @@ import { getTranslations } from 'next-intl/server';
 export async function generateMetadata() {
     const locale = await getLocale();
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tu-dominio.com';
-    const t = await getTranslations({ locale, namespace: 'HomePage' });
-    return generateMetadataForLocale({ locale, baseUrl, title: t('title'), description: t('description') });
+    const t = await getTranslations({ locale, namespace: 'homeMeta' });
+    return generateMetadataForLocale({ locale, baseUrl, title: t('title'), typePage: 'home', description: t('description'), image: t('image') });
 }
 
 export default async function HomePage() {

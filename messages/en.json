@@ -15,7 +15,7 @@
     },
     "Projects": {
         "more": "Read more",
-        "viewAll": "View all projects"
+        "viewAll": "View my work"
     },
     "Banner": {
         "labelPrincipal": "Leading",
@@ -41,8 +41,8 @@
         "bannerSubtitle": "Explore my posts by category and tags.",
         "categoryLabel": "Category",
         "tagLabel": "Tag",
-        "allCategories": "All",
-        "allTags": "All",
+        "allCategories": "All categories",
+        "allTags": "All tags",
         "readArticle": "Read article",
         "pageOf": "Page",
         "of": "of",
@@ -52,9 +52,10 @@
         "noArticlesText": "There are no articles matching the selected filters. Try adjusting the filters.",
         "notes": "Notes",
         "backToArticles": "Back to articles",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "filterBy": "Filter by"
     },
-    "artivleDetail": {
+    "articleDetail": {
         "backToArticles": "Back to articles",
         "loading": "Loading article..."
     },
@@ -89,5 +90,24 @@
         "submitButton": "Send Message",
         "ways": "OTHER WAYS",
         "message": "Alternative contact"
+    },
+    "contactSuccess": {
+        "title": "Thank you for your message!",
+        "subtitle": "I will contact you soon."
+    },
+    "contactMeta": {
+        "title": "Contact Me - Walter Cuadros",
+        "description": "Available to explore opportunities where teams, technology and product vision connect to generate real impact.",
+        "image": "/images/promoContact.webp"
+    },
+    "homeMeta": {
+        "title": "Portfolio - Walter Cuadros",
+        "description": "I am Walter Giovanny Cuadros Rincon, Cloud Solutions Architect, Delivery Manager, and Technical Product Owner.",
+        "image": "/images/promoHome.webp"
+    },
+    "articlesMeta": {
+        "title": "Articles - Walter Cuadros",
+        "description": "Explore my articles on cloud solutions, product management, and technology trends.",
+        "image": "/images/bannrtArticles.webp"
     }
 }

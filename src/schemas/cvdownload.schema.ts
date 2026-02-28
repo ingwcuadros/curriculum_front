@@ -5,7 +5,8 @@ export const CVDownloadSchema = z.object({
     id: z.uuid(),
     fileName: z.string(),
     metaKeywords: z.string(),
-    filePath: z.string()
+    filePath: z.string(),
+    filePathEn: z.string(),
 });
 
 export type CVDownloadData = z.infer<typeof CVDownloadSchema>
