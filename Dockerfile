@@ -15,19 +15,19 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NODE_ENV=production
-# Opcional si quieres saltarte typecheck:
+# Opcional:
 # ENV NEXT_SKIP_TYPECHECK=1
 
 RUN npm run build
 
-# Reducir tamaño: limpiamos cache de Next
+# Limpiamos cache de Next
 RUN rm -rf .next/cache
 
-# Quitamos devDependencies de node_modules
+# Quitamos devDependencies
 RUN npm prune --omit=dev
 
 
-# ========== 3) Runtime ==========
+# ========== 3) Runtime (standalone) ==========
 FROM node:20-alpine AS runner
 WORKDIR /app
 
@@ -35,15 +35,12 @@ ENV NODE_ENV=production
 
 RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 
-# node_modules ya sin devDeps
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+# Bundle standalone
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./ 
 
-# build de Next + estáticos
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+# Archivos estáticos
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
-# 👇 Si quieres copiar next.config.* (opcional), hazlo así, sin || true:
-# COPY --from=builder --chown=nextjs:nodejs /app/next.config.mjs ./next.config.mjs
 
 RUN mkdir -p .next/cache/images && chown -R nextjs:nodejs /app
 
@@ -51,4 +48,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["node", "server.js"]
