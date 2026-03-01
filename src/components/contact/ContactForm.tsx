@@ -160,18 +160,18 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        console.log('[ContactForm] submit clicked'); // 👈 Log 1
 
-        console.log('[ContactForm] status, cooldown:', status, cooldown);
+
+
         if (cooldown || status === "loading") {
-            console.log('[ContactForm] Early return: cooldown/loading');
+
             return;
         }
 
         // Check honeypot
 
         if (honeypotRef.current?.value) {
-            console.log('[ContactForm] Early return: honeypot filled');
+
             return;
         }
 
@@ -187,7 +187,6 @@ export default function ContactForm() {
             if (err) newErrors[key] = err;
         });
 
-        console.log('[ContactForm] newErrors:', newErrors);
         setErrors(newErrors as any);
 
         if (Object.keys(newErrors).length > 0) {
@@ -223,7 +222,7 @@ export default function ContactForm() {
                 body: JSON.stringify({ ...form, recaptchaToken }),
             });
 
-            console.log('[ContactForm] /api/contact response status:', res.status);
+
 
             if (!res.ok) {
                 const text = await res.text().catch(() => '');
@@ -238,7 +237,7 @@ export default function ContactForm() {
             setStatus('error');
         } finally {
             setTimeout(() => {
-                console.log('[ContactForm] cooldown ended');
+
                 setCooldown(false);
             }, 2000);
         }

@@ -27,8 +27,6 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
         return () => setTranslations(null); // limpiar al salir
     }, [article]);
 
-    console.log('Received article data:', article);
-
     const t = useTranslations('articleDetail');
     const prefersReducedMotion =
         typeof window !== 'undefined' &&

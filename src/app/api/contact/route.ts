@@ -64,7 +64,7 @@ export async function POST(req: Request) {
 
         // 🔥 Leemos el body ANTES de validar authRes.ok
         const authText = await authRes.text();
-        console.log('[AUTH] raw body:', authText);
+
 
         // Intentar parsear JSON (por si aplica)
         let authJson;

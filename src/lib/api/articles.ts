@@ -42,7 +42,7 @@ export async function getPaginatedArticles(
     if (tag) searchParams.set("tags", tag.toLowerCase()); // tu API espera "tags" aunque sea uno solo
 
     url.search = searchParams.toString();
-    console.log("Fetching paginated articles with URL:", url.toString());
+
     const res = await fetch(url.toString(), {
         // En desarrollo: datos siempre frescos
         cache: "no-store",
@@ -96,7 +96,7 @@ export async function getFiltersData(lang: string): Promise<FiltersData> {
             }
         }
     }
-    console.log("Categorías únicas encontradas:", Array.from(categorySet));
+
     return {
         categories: Array.from(categorySet),
         tags: Array.from(tagSet),
@@ -105,7 +105,6 @@ export async function getFiltersData(lang: string): Promise<FiltersData> {
 
 
 export async function getArticleDetail(slug: string, lang: string): Promise<Article> {
-    console.log("Fetching article detail for slug:", slug, "and lang:", lang);
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/articles/${slug}?lang=${lang}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Error al obtener el artículo');
     // Filtrar por slug (campo url)
