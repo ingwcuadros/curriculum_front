@@ -33,9 +33,7 @@ export default function Projects({ data }: ProjectsProps) {
                         <Grid3X3 className="w-4 h-4" />
                         Portfolio
                     </span>
-                    <h2 id="projects-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                        {data.title}
-                    </h2>
+
                 </motion.div>
 
                 {/* Projects grid */}

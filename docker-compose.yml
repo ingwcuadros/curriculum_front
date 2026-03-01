@@ -1,0 +1,28 @@
+
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-app
+    restart: unless-stopped
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
+    # Puerto host:contenedor
+    ports:
+      - "3000:3000"
+    # Archivo de variables de entorno
+    env_file:
+      - .env
+    # Si prefieres definirlas inline:
+    # environment:
+    #   NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+    #   API_SECRET_KEY: ${API_SECRET_KEY}
+    #   DATABASE_URL: ${DATABASE_URL}
+    #   JWT_SECRET: ${JWT_SECRET}
+    working_dir: /app
+    # Opcional: si necesitas volumen para desarrollo
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules

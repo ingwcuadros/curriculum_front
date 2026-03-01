@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index, t }: ProjectCardProps) {
                         {project.title}
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
-                        {project.auxiliaryContent}
+                        {project.promo}
                     </p>
 
                     <motion.a

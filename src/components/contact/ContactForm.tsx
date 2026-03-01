@@ -4,20 +4,39 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
-import { FIELD_CONFIG } from "@/components/contact/FIELD_CONFIG";
+import {
+    FIELD_CONFIG,
+    type Locale,
+    type FieldName,
+    type SingleFieldConfig,
+} from "@/components/contact/FIELD_CONFIG";
 import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
 
+type FormState = Record<FieldName, string>;
+type TouchedState = Record<FieldName, boolean>;
+type ErrorState = Record<FieldName, string | null>;
+type Status = "idle" | "loading" | "success" | "error";
 
 
-function InputField({ id, config, value, onChange, error, touched }: {
-    id: string;
-    config: { type: string; label: string; placeholder: string; validate: (value: string) => string | null };
+
+interface InputFieldProps {
+    id: FieldName;
+    config: SingleFieldConfig;
     value: string;
-    onChange: (id: string, value: string) => void;
+    onChange: (id: FieldName, value: string) => void;
     error: string | null;
     touched: boolean;
-}) {
+}
+
+function InputField({
+    id,
+    config,
+    value,
+    onChange,
+    error,
+    touched,
+}: InputFieldProps) {
     const isTextarea = config.type === "textarea";
     const hasError = touched && error;
     const Tag = isTextarea ? "textarea" : "input";
@@ -134,28 +153,53 @@ function SuccessState() {
 }
 
 export default function ContactForm() {
-    const locale = useLocale();
 
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
-    const [touched, setTouched] = useState({});
-    const [errors, setErrors] = useState({});
-    const [status, setStatus] = useState("idle"); // idle | loading | success | error
+    const locale = useLocale() as Locale;
+    const fieldConfig = FIELD_CONFIG[locale];
+
+
+
+    const [form, setForm] = useState<FormState>({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [touched, setTouched] = useState<TouchedState>({
+        name: false,
+        email: false,
+        message: false,
+    });
+
+    const [errors, setErrors] = useState<ErrorState>({
+        name: null,
+        email: null,
+        message: null,
+    });
+
+    const [status, setStatus] = useState<Status>("idle");
+
     const [cooldown, setCooldown] = useState(false);
-    const honeypotRef = useRef(null);
+    const honeypotRef = useRef<HTMLInputElement | null>(null);
 
-    const handleChange = (field: string, value: string) => {
+
+
+
+    const handleChange = (field: FieldName, value: string) => {
         setForm((p) => ({ ...p, [field]: value }));
+
         if (touched[field]) {
-            const err = FIELD_CONFIG[locale][field].validate(value);
+            const err = fieldConfig[field].validate(value);
             setErrors((p) => ({ ...p, [field]: err }));
         }
     };
 
-    const handleBlur = (field) => {
+    const handleBlur = (field: FieldName) => {
         setTouched((p) => ({ ...p, [field]: true }));
-        const err = FIELD_CONFIG[locale][field].validate(form[field]);
+        const err = fieldConfig[field].validate(form[field]);
         setErrors((p) => ({ ...p, [field]: err }));
     };
+
 
 
     const handleSubmit = async (e: any) => {
@@ -182,9 +226,10 @@ export default function ContactForm() {
         const newErrors: Record<string, string | null> = {};
 
 
-        Object.keys(FIELD_CONFIG[locale] || {}).forEach((key) => {
-            const err = FIELD_CONFIG[locale][key].validate((form as any)[key]);
-            if (err) newErrors[key] = err;
+        Object.keys(fieldConfig).forEach((key) => {
+            const fieldKey = key as FieldName;
+            const err = fieldConfig[fieldKey].validate((form as any)[fieldKey]);
+            if (err) newErrors[fieldKey] = err;
         });
 
         setErrors(newErrors as any);
@@ -266,11 +311,12 @@ export default function ContactForm() {
                 aria-hidden="true"
             />
 
-            {Object.keys(FIELD_CONFIG[locale]).map((key) => (
+
+            {(Object.keys(fieldConfig) as FieldName[]).map((key) => (
                 <div key={key} onBlur={() => handleBlur(key)}>
                     <InputField
                         id={key}
-                        config={FIELD_CONFIG[locale][key]}
+                        config={fieldConfig[key]}
                         value={form[key]}
                         onChange={handleChange}
                         error={errors[key]}
@@ -278,6 +324,7 @@ export default function ContactForm() {
                     />
                 </div>
             ))}
+
 
             {status === "error" && (
                 <motion.div

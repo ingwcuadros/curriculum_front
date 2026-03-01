@@ -6,7 +6,7 @@ const ArticleSchema = z.object({
     id: z.uuid(),
     title: z.string(),
     url: z.string().optional(), // Algunos artículos pueden no tener URL
-    auxiliaryContent: z.string(),
+    promo: z.string(),
     image: z.string().url(),
     altImage: z.string()
 });

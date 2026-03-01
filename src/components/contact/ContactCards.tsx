@@ -2,7 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, FileUser } from "lucide-react";
 
-const cards = [
+interface CardType {
+    icon: React.ComponentType<{ className?: string }>;
+    title: string;
+    value: string;
+    href: string;
+    color: string;
+}
+
+const cards: CardType[] = [
     {
         icon: Mail,
         title: "Email",
@@ -26,7 +34,7 @@ const cards = [
     },
 ];
 
-function ContactCard({ card, index }) {
+function ContactCard({ card, index }: { card: CardType; index: number }) {
     return (
         <motion.a
             href={card.href}
@@ -66,7 +74,11 @@ function ContactCard({ card, index }) {
                 whileHover={{ rotate: [0, -8, 8, 0] }}
                 transition={{ duration: 0.5 }}
             >
-                <card.icon className="w-6 h-6" style={{ color: card.color }} />
+
+                <span style={{ color: card.color }}>
+                    <card.icon className="w-6 h-6" />
+                </span>
+
             </motion.div>
 
             <h3 className="relative z-10 text-white font-semibold text-sm mb-1">

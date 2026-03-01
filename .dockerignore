@@ -1,0 +1,27 @@
+# Dependencias locales
+node_modules
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+
+# Output de Next
+.next
+out
+
+# Archivos de entorno (no deben ir dentro de la imagen)
+
+.env.development
+.env.test
+.env.production
+
+# Git y herramientas
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+
+# Editor/OS
+.vscode
+.idea
+*.swp
+.DS_Store
