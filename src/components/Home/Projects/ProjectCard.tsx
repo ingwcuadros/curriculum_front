@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { ArticleData } from "@/schemas/projects.schema";
-
+import { useLocale } from 'next-intl';
 
 interface ProjectCardProps {
     project: ArticleData;
@@ -18,7 +18,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index, t }: ProjectCardProps) {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-
+    const locale = useLocale();
     return (
         <motion.article
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function ProjectCard({ project, index, t }: ProjectCardProps) {
                     </p>
 
                     <motion.a
-                        href={`/articles/${project.url}`}
+                        href={`/${locale}/articles/${project.url}`}
                         whileHover={{ x: 5 }}
                         aria-label={`${t('more')} ${project.title}`}
                         className="flex items-center gap-2 text-[#4C9EEB] font-medium text-sm hover:text-[#22D3EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#4C9EEB] rounded"
