@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { BannerData } from "@/schemas/banner.schema";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -17,6 +17,7 @@ export default function Banner({ data }: BannerProps) {
 
 
     const traslation = useTranslations('Banner');
+    const locale = useLocale();
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
     return (
@@ -118,7 +119,7 @@ export default function Banner({ data }: BannerProps) {
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
                             <motion.a
-                                href={'/contact'}
+                                href={`/${locale}/contact`}
                                 target='_blank'
                                 whileHover={{ scale: 1.02, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
@@ -133,7 +134,7 @@ export default function Banner({ data }: BannerProps) {
                             </motion.a>
 
                             <motion.a
-                                href={'/articles'}
+                                href={`/${locale}/articles`}
                                 target='_blank'
                                 whileHover={{ scale: 1.02, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
