@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
                 protocol: "http",
                 hostname: "personalweb-cvwalter-rt70pf-306908-46-225-97-207.traefik.me",
             },
+            {
+                protocol: "https",
+                hostname: "media.ingwaltercuadros.com",
+            },
         ],
     },
 
