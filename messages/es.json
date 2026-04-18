@@ -109,5 +109,15 @@
         "title": "Artículos - Walter Cuadros",
         "description": "Explora mis artículos sobre tecnología, arquitectura de software, desarrollo de productos y liderazgo técnico.",
         "image": "/images/bannrtArticles.webp"
+    }, 
+    "impact":
+    {
+        "title": "Impacto y Resultados",
+        "sub": "Responsabilidad técnica integral, desde la arquitectura hasta la entrega.",
+        "track": "Trayectoria",
+        "Rocket": "Lideré soluciones de software end-to-end, desde la definición inicial hasta su operación en producción estable, asumiendo la responsabilidad técnica integral de los sistemas.", 
+        "Layers": "Tomé decisiones de arquitectura y calidad técnica que priorizaron sostenibilidad, mantenibilidad y evolución del producto en el tiempo.",
+        "Users": "Acompañé equipos backend y frontend estableciendo estándares técnicos y prácticas comunes para asegurar consistencia y calidad en las entregas.",
+        "TrendingUp": "Coordiné la ejecución técnica en contextos de producto, equilibrando necesidades de negocio, deuda técnica y capacidad real del equipo."
     }
 }

@@ -12,6 +12,7 @@ import { ExperienceSchema, ExperienceData } from "@/schemas/experience.schema";
 import { CVDownloadSchema, CVDownloadData } from "@/schemas/cvdownload.schema";
 import { generateMetadataForLocale } from '@/lib/metadata';
 import { getTranslations } from 'next-intl/server';
+import Impact from '@/components/Home/Impact/Impact';
 
 
 export async function generateMetadata() {
@@ -47,6 +48,7 @@ export default async function HomePage() {
     return (
         <main className="bg-[#0B0F14]">
             <Banner data={bannerData} />
+            <Impact />  
             <Projects data={projectsData} />
             <Achievements data={achievementsData} />
             <Experience data={experienceData} />

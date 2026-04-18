@@ -109,5 +109,15 @@
         "title": "Articles - Walter Cuadros",
         "description": "Explore my articles on cloud solutions, product management, and technology trends.",
         "image": "/images/bannrtArticles.webp"
-    }
+    },
+        "impact":
+        {
+            "title": "Impact and Results",
+            "sub": "Comprehensive technical responsibility, from architecture to delivery.",
+            "track": "Track Record",
+            "Rocket": "Led end-to-end software solutions, from initial definition to stable production operation, taking comprehensive technical responsibility for the systems.", 
+            "Layers": "Made architectural and technical quality decisions that prioritized sustainability, maintainability, and product evolution over time.",
+            "Users": "Supported backend and frontend teams by establishing technical standards and common practices to ensure consistency and quality in deliveries.",
+            "TrendingUp": "Coordinated technical execution in product contexts, balancing business needs, technical debt, and the team's real capacity."
+        }
 }
