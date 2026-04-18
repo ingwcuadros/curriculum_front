@@ -15,13 +15,13 @@
     },
     "Projects": {
         "more": "Read more",
-        "viewAll": "View my work"
+        "viewAll": "Read technical articles"
     },
     "Banner": {
         "labelPrincipal": "Leading",
         "labelSecundary": "Solutions",
         "contactMe": "Contact Me",
-        "seeMyWork": "See My Work",
+        "seeMyWork": "View projects and experience",
         "openWork": "Open to collaborate on innovative projects",
         "ariaCtaContact": "Go to contact page",
         "ariaCtaProject": "Go to projects page"
