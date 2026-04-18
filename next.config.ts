@@ -3,6 +3,61 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
     output: 'standalone',
+    
+    async headers() {
+        return [
+            {
+                source: '/(.*)', // aplica a todo el sitio
+                headers: [
+                    // ✅ Fuerza HTTPS
+                    {
+                        key: 'Strict-Transport-Security',
+                        value: 'max-age=63072000; includeSubDomains; preload',
+                    },
+
+                    // ✅ Evita clickjacking
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'SAMEORIGIN',
+                    },
+
+                    // ✅ Evita MIME sniffing
+                    {
+                        key: 'X-Content-Type-Options',
+                        value: 'nosniff',
+                    },
+
+                    // ✅ Controla qué referrer se envía
+                    {
+                        key: 'Referrer-Policy',
+                        value: 'strict-origin-when-cross-origin',
+                    },
+
+                    // ✅ Restringe APIs del navegador
+                    {
+                        key: 'Permissions-Policy',
+                        value: 'camera=(), microphone=(), geolocation=()',
+                    },
+
+                    // ✅ Política de contenido (CSP)
+                    {
+                        key: 'Content-Security-Policy',
+                        value: `
+                        default-src 'self';
+                        script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                        style-src 'self' 'unsafe-inline';
+                        img-src 'self' data: https:;
+                        font-src 'self' https: data:;
+                        connect-src 'self' https:;
+                        frame-ancestors 'self';
+                        `
+                        .replace(/\s{2,}/g, ' ')
+                        .trim(),
+                    },
+                ],
+            },
+            ];
+        },
     images: {
         remotePatterns: [
             {
@@ -27,7 +82,7 @@ const nextConfig: NextConfig = {
             },
         ],
     },
-
+    
     // No queremos source maps en el navegador en producción
     productionBrowserSourceMaps: false,
 
